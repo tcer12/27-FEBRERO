@@ -205,7 +205,9 @@ box-shadow:  20px 20px 60px #bebebe,
     width: 500px;
     opacity: 0;
     transform: translateY(100%);
-    animation: slideIn 0.5s forwards;
+    opacity: 0; 
+    animation: slideIn 1s ease-in-out forwards;
+    animation-delay: 5.5s;
 }
 
 /* Estilo para la imagen */
@@ -247,13 +249,13 @@ box-shadow:  20px 20px 60px #bebebe,
 
 @media (max-width: 900px) {
     .container_mini_1 {
-        flex-direction: column; /* Cambia la dirección de los elementos a columna */
-        align-items: center; /* Alinea las imágenes al centro */
-        gap: 15px; /* Espaciado entre las imágenes */
+        flex-direction: column;
+        align-items: center; 
+        gap: 15px;
     }
 
     .foto {
-        width: 250px; /* Reduce el tamaño de las fotos */
+        width: 250px;
         height: 250px;
     }
     .alert-overlay {
@@ -265,7 +267,7 @@ box-shadow:  20px 20px 60px #bebebe,
       top: 150px;
       left: 10px;
       width: 100%;
-      height: 450px;  /* Ajuste para pantallas más pequeñas */
+      height: 450px;  
       max-width: 600px;
       padding: 20px;
       font-size: 20px;
@@ -273,12 +275,11 @@ box-shadow:  20px 20px 60px #bebebe,
     }
 
     .alert-container img {
-      width: 250px; /* Ajuste de imagen */
+      width: 250px; 
       height: 250px;
     }
 
     .alert-container button {
-      padding: 12px 24px;
       font-size: 18px;
     }
   }

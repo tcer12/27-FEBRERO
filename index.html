@@ -1,88 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>27 de Febrero ITLA</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="shortcut icon" href="./assets/img/desafio_patriotico.webp" type="image/x-png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>27 de Febrero ITLA</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="shortcut icon" href="./assets/img/desafio_patriotico.webp" type="image/x-png">
 </head>
+
 <body>
-    <header>
-        <img src="./assets/img/logo-politecnico-340x200.png" alt="Logo">
-    </header>
-    <main> 
-        <section class="container">
-            <h2 class="title">¡Ponte a Prueba con los Juegos de la Historia Dominicana!</h2>
-            <div class="container_mini_1">
-                <a href=""><img class="foto" id="img1" src="./assets/img/desafio_patriotico.webp" alt="X"></a>
-                <a href=""><img class="foto" id="img2" src="./assets/img/crusigrama.jpg" alt="X"></a>
-                <a href=""><img class="foto" id="img3" src="./assets/img/Imagen de WhatsApp 2025-02-24 a las 14.45.16_e01f1211.jpg" alt="X"></a>
-                <a href=""><img class="foto" id="img4" src="./assets/img/Imagen de WhatsApp 2025-02-24 a las 14.50.55_005e0a1a.jpg" alt="X"></a>
-            </div>
-            <div class="container_mini_1">
-                <a href=""><img class="foto" id="img4" src="./assets/img/elahorcado.jpg" alt="X"></a>
-            </div>
-        </section>
-        <div class="alert-container" id="alerta">
-            <div>
-                <span>Disfruta explorando una serie de juegos interactivos sobre los acontecimientos más importantes de nuestra independencia dominicana.</span>
-                <p>ATT: Juan Pablo Duarte</p>
-                <button onclick="cerrarAlerta()">Aceptar</button>
-            </div>
-            <img src="./assets/img/Juan_Pablo_Duarte.png" alt="Alerta">
-          </div>
-    </main>
-    <div class="containerr">
-      <div class="dot dot-1"></div>
-      <div class="dot dot-2"></div>
-      <div class="dot dot-3"></div>
+  <header>
+    <img src="./assets/img/logo-politecnico-340x200.png" alt="Logo">
+  </header>
+  <main>
+    <section class="container">
+      <h2 class="title">¡Ponte a Prueba con los Juegos de la Historia Dominicana!</h2>
+      <div class="container_mini_1">
+        <a id="img1" href=""><img class="foto" src="./assets/img/desafio_patriotico.webp" alt="X"></a>
+        <a id="img2" href=""><img class="foto" src="./assets/img/crusigrama.jpg" alt="X"></a>
+        <a id="img3" href=""><img class="foto" 
+            src="./assets/img/Imagen de WhatsApp 2025-02-24 a las 14.45.16_e01f1211.jpg" alt="X"></a>
+        <a id="img4" href=""><img class="foto" 
+            src="./assets/img/Imagen de WhatsApp 2025-02-24 a las 14.50.55_005e0a1a.jpg" alt="X"></a>
+      </div>
+      <div class="container_mini_1">
+        <a id="img5" href=""><img class="foto"  src="./assets/img/elahorcado.jpg" alt="X"></a>
+        <a id="img6" href=""><img class="foto"  src="./assets/img/elahorcado.jpg" alt="X"></a>
+      </div>
+    </section>
+    <div class="alert-container" id="alerta">
+      <div>
+        <span>Disfruta explorando una serie de juegos interactivos sobre los acontecimientos más importantes de nuestra
+          independencia dominicana.</span>
+        <p>ATT: Juan Pablo Duarte</p>
+        <button id="btnAceptar">Aceptar</button>
+      </div>
+      <img src="./assets/img/Juan_Pablo_Duarte.png" alt="Alerta">
     </div>
-    
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <filter id="goo">
-          <feGaussianBlur
-            result="blur"
-            stdDeviation="10"
-            in="SourceGraphic"
-          ></feGaussianBlur>
-          <feColorMatrix
-            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7"
-            mode="matrix"
-            in="blur"
-          ></feColorMatrix>
-        </filter>
-      </defs>
-    </svg>
-    <script>
+  </main>
+  <div class="containerr">
+    <div class="dot dot-1"></div>
+    <div class="dot dot-2"></div>
+    <div class="dot dot-3"></div>
+  </div>
 
-document.addEventListener("DOMContentLoaded", function () { 
-    const container = document.querySelector(".containerr"); 
-    const allElements = Array.from(document.body.children).filter(el => !el.classList.contains("containerr"));
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="goo">
+        <feGaussianBlur result="blur" stdDeviation="10" in="SourceGraphic"></feGaussianBlur>
+        <feColorMatrix values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7" mode="matrix" in="blur"></feColorMatrix>
+      </filter>
+    </defs>
+  </svg>
+  <script>
 
-    // Asegurar que .containerr esté visible al inicio
-    container.style.display = "block"; 
+document.addEventListener("DOMContentLoaded", function () {
+    // Bloquear enlaces al inicio
+    const links = document.querySelectorAll("#img1, #img2, #img3, #img4, #img5, #img6");
 
-    // Ocultar todos los demás elementos excepto .containerr
-    allElements.forEach(el => { 
-        el.style.opacity = "0";  // En lugar de display:none, usamos opacity para evitar problemas de reflujo
-        el.style.visibility = "hidden"; 
+    links.forEach(link => {
+        link.style.pointerEvents = "none"; // Deshabilita el clic
+        link.style.opacity = "0.5"; // Visualmente indicar que está bloqueado
     });
 
-    setTimeout(() => { 
+    // Función para cerrar la alerta y desbloquear enlaces
+    function cerrarAlerta() {
+        document.getElementById('alerta').style.display = 'none';
+
+        // Desbloquear enlaces
+        links.forEach(link => {
+            link.style.pointerEvents = "auto"; // Activa los clics
+            link.style.opacity = "1"; // Restaura la opacidad normal
+        });
+    }
+
+    // Asignar función al botón "Aceptar"
+    document.getElementById("btnAceptar").addEventListener("click", cerrarAlerta);
+});
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const container = document.querySelector(".containerr");
+      const allElements = Array.from(document.body.children).filter(el => !el.classList.contains("containerr"));
+
+      // Asegurar que .containerr esté visible al inicio
+      container.style.display = "block";
+
+      // Ocultar todos los demás elementos excepto .containerr
+      allElements.forEach(el => {
+        el.style.opacity = "0";  // En lugar de display:none, usamos opacity para evitar problemas de reflujo
+        el.style.visibility = "hidden";
+      });
+
+      setTimeout(() => {
         // Ocultar .containerr después de 5 segundos
-        container.style.opacity = "0"; 
-        container.style.visibility = "hidden"; 
+        container.style.opacity = "0";
+        container.style.visibility = "hidden";
 
         // Mostrar todos los demás elementos
-        allElements.forEach(el => { 
-            el.style.opacity = "1";  
-            el.style.visibility = "visible"; 
-        }); 
-    }, 5000); 
-}); 
+        allElements.forEach(el => {
+          el.style.opacity = "1";
+          el.style.visibility = "visible";
+        });
+      }, 5000);
+    });
 
-    </script>
+  </script>
 </body>
+
 </html>
