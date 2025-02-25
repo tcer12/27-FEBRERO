@@ -62,6 +62,7 @@
       animation: popEffect 0.5s ease-in-out infinite alternate;
     }
 
+
     #option1{
       background-color: #fef3c7;
       color: black;
@@ -80,6 +81,7 @@
       font-size: 35px;
       width: 350px;
       height: 250px;
+      margin: 20px;
     }
     #option3{
       background-color: #EF4444;
@@ -159,6 +161,7 @@
   #start-screen {
     grid-template-columns: 1fr;
     gap: 10px; /* Espacio entre los botones */
+    justify-content: center;
   }
   .img {
     width: 600px;
@@ -174,6 +177,7 @@
   #start-screen {
     grid-template-columns: 1fr;
     gap: 10px; 
+    justify-content: center;
   }
   .img {
     width: 550px;
@@ -183,13 +187,14 @@
 
 @media (max-width: 576px) {
   .container {
-    max-width: 100%;
+    max-width: 80%;
     padding: 10px;
     text-align: center;
   }
   #start-screen {
     grid-template-columns: 1fr;
     gap: 10px; /* Espacio entre los botones */
+    justify-content: center;
   }
   .img {
     width: 350px;
@@ -199,6 +204,11 @@
 
 @media (max-width: 400px) {
   #start-screen {
+    grid-template-columns: 1fr;
+    gap: 10px; 
+  }
+  #question-screen {
+    padding-left: 20px;
     grid-template-columns: 1fr;
     gap: 10px; 
   }
@@ -239,31 +249,35 @@
   </style>
 </head>
 <body>
-  <div class="container" id="quiz-container">
-    <div id="start-screen">
-      <div class="text_container">
-        <h1>Desafío Patriótico</h1>
-        <br>
-        <br>
-        <button class="button_inicial" id="start-button"><svg  xmlns="http://www.w3.org/2000/svg"  width="64"  height="64"  viewBox="0 0 24 24"  fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-player-play"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z" /></svg></button>
+  <center>
+    <div class="container" id="quiz-container">
+      <div id="start-screen">
+        <div class="text_container">
+          <h1>Desafío Patriótico</h1>
+          <br>
+          <br>
+          <button class="button_inicial" id="start-button"><svg  xmlns="http://www.w3.org/2000/svg"  width="64"  height="64"  viewBox="0 0 24 24"  fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-player-play"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z" /></svg></button>
+        </div>
+        <div>
+          <img class="img" src="./fondo_patria.webp" alt="Foto patria">
+        </div>
       </div>
-      <div>
-        <img class="img" src="./fondo_patria.webp" alt="Foto patria">
+      <div id="question-screen" style="display: none;">
+        <div class="timer" id="timer">Tiempo: 10</div>
+        <div class="question" id="question"></div>
+          <button id="option1"></button>
+          <button id="option2"></button>
+          <button id="option3"></button>
+
+      </div>
+      <div id="result-screen" style="display: none;">
+        <h1>Desafío Patriótico Completado!</h1>
+        <div class="score" id="final-score"></div>
+        <a class="button" href="https://27.roanexus.com/">Volver</a>
       </div>
     </div>
-    <div id="question-screen" style="display: none;">
-      <div class="timer" id="timer">Tiempo: 10</div>
-      <div class="question" id="question"></div>
-      <button id="option1"></button>
-      <button id="option2"></button>
-      <button id="option3"></button>
-    </div>
-    <div id="result-screen" style="display: none;">
-      <h1>Desafío Patriótico Completado!</h1>
-      <div class="score" id="final-score"></div>
-      <a class="button" href="https://27.roanexus.com/">Volver</a>
-    </div>
-  </div>
+  </center>
+  
 
   <a class="btn-bottom-left" href="https://27.roanexus.com/"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-left-dashed"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12h6m3 0h1.5m3 0h.5" /><path d="M5 12l6 6" /><path d="M5 12l6 -6" /></svg></a>
 
