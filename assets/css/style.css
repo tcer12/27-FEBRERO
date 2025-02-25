@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Comfortaa:wght@300..700&family=Moon+Dance&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Estilos generales */
+body {
+    background-color: #e0e0e0;
+    font-family: "Moon Dance", serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    z-index: 10;
+}
+
+header img {
+    width: 100px;
+}
+
+/* From Uiverse.io by Sourcesketch */ 
+.containerr {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  filter: url("#goo");
+  animation: rotate-move 2s ease-in-out infinite;
+  z-index: -10;
+}
+
+.dot {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #000;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.dot-3 {
+  background-color: #ff1717;
+  animation: dot-3-move 2s ease infinite, index 6s ease infinite;
+}
+
+.dot-2 {
+  background-color: #0051ff;
+  animation: dot-2-move 2s ease infinite, index 6s -4s ease infinite;
+}
+
+.dot-1 {
+  background-color: #ffc400;
+  animation: dot-1-move 2s ease infinite, index 6s -2s ease infinite;
+}
+
+@keyframes dot-3-move {
+  20% {
+    transform: scale(1);
+  }
+  45% {
+    transform: translateY(-18px) scale(0.45);
+  }
+  60% {
+    transform: translateY(-90px) scale(0.45);
+  }
+  80% {
+    transform: translateY(-90px) scale(0.45);
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+}
+
+@keyframes dot-2-move {
+  20% {
+    transform: scale(1);
+  }
+  45% {
+    transform: translate(-16px, 12px) scale(0.45);
+  }
+  60% {
+    transform: translate(-80px, 60px) scale(0.45);
+  }
+  80% {
+    transform: translate(-80px, 60px) scale(0.45);
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+}
+
+@keyframes dot-1-move {
+  20% {
+    transform: scale(1);
+  }
+  45% {
+    transform: translate(16px, 12px) scale(0.45);
+  }
+  60% {
+    transform: translate(80px, 60px) scale(0.45);
+  }
+  80% {
+    transform: translate(80px, 60px) scale(0.45);
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+}
+
+@keyframes rotate-move {
+  55% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  80% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes index {
+  0%,
+  100% {
+    z-index: 3;
+  }
+  33.3% {
+    z-index: 2;
+  }
+  66.6% {
+    z-index: 1;
+  }
+}
+
+
+.container {
+    width: 100%;
+    max-width: 1500px;
+    height: 100%;
+}
+
+.title {
+    text-align: center;
+    font-size: 35px;
+}
+
+.container_mini_1 {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.foto {
+    width: 210px;
+    height: 210px;
+    border-radius: 50px;
+background: #e0e0e0;
+box-shadow:  20px 20px 60px #bebebe,
+             -20px -20px 60px #ffffff;
+}
+
+@keyframes shake {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-10px);
+    }
+    50% {
+      transform: translateX(10px);
+    }
+    75% {
+      transform: translateX(-10px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+/*Juan Pablo Duarte COOL*/
+.alert-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #d7dcf8;
+    color: #000000;
+    font-size: 25px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    max-width: 100%;
+    width: 500px;
+    opacity: 0;
+    transform: translateY(100%);
+    animation: slideIn 0.5s forwards;
+}
+
+/* Estilo para la imagen */
+.alert-container img {
+    width: 250px;
+    height: 250px;
+    margin-right: 10px;
+}
+
+/* Estilo para el botón */
+.alert-container button {
+    width: 100px;
+    height: 40px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.alert-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Animación de deslizamiento */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 900px) {
+    .container_mini_1 {
+        flex-direction: column; /* Cambia la dirección de los elementos a columna */
+        align-items: center; /* Alinea las imágenes al centro */
+        gap: 15px; /* Espaciado entre las imágenes */
+    }
+
+    .foto {
+        width: 250px; /* Reduce el tamaño de las fotos */
+        height: 250px;
+    }
+    .alert-overlay {
+      display: flex;
+    }
+
+    .alert-container {
+      position: fixed;
+      top: 150px;
+      left: 10px;
+      width: 100%;
+      height: 450px;  /* Ajuste para pantallas más pequeñas */
+      max-width: 600px;
+      padding: 20px;
+      font-size: 20px;
+      display: grid;
+    }
+
+    .alert-container img {
+      width: 250px; /* Ajuste de imagen */
+      height: 250px;
+    }
+
+    .alert-container button {
+      padding: 12px 24px;
+      font-size: 18px;
+    }
+  }
