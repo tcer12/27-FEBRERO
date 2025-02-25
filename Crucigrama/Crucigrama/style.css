@@ -1,0 +1,226 @@
+/** @format */
+:root {
+  --cell-size: max(30px, min(40px, 4vw));
+  --cell-bg: #ffffff;
+  --cell-selected: #bfdbfe;
+  --cell-correct: #10b981;
+  --border-color: #1f2937;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #f3f4f6;
+  color: #1f2937;
+  line-height: 1.5;
+}
+
+/* Estilos específicos para el botón */
+.btn-bottom-left {
+  position: fixed;
+  left: 10px;
+  bottom: 10px;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Cambio de color al pasar el mouse por encima */
+.btn-bottom-left:hover {
+  background-color: #2980b9;
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 600px) {
+  .btn-bottom-left {
+      font-size: 14px;
+      padding: 8px 16px;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #1f2937;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .game-container {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.crossword-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.crossword {
+  display: grid;
+  gap: 1px;
+  background-color: var(--border-color);
+  padding: 1px;
+  width: fit-content;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  background-color: var(--cell-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.cell.blocked {
+  background-color: var(--border-color);
+}
+
+.cell.selected {
+  background-color: var(--cell-selected);
+}
+
+.cell.correct {
+  background-color: var(--cell-correct);
+  color: white;
+}
+
+.cell-number {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  font-size: 0.7rem;
+  color: #4b5563;
+}
+
+.cell input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: none;
+  text-align: center;
+  font-size: calc(var(--cell-size) * 0.6);
+  text-transform: uppercase;
+  color: inherit;
+}
+
+.cell input:focus {
+  outline: none;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: white;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  color: white;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  background-color: #f3f4f6;
+  border-color: #9ca3af;
+  transform: scale(1.1);
+}
+
+.btn svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.clues {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  min-width: 300px;
+}
+
+.clues-section {
+  margin-bottom: 1.5rem;
+}
+
+.clues-section:last-child {
+  margin-bottom: 0;
+}
+
+.clues-section h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+
+.clues-section ol {
+  list-style-position: inside;
+  padding-left: 0.5rem;
+}
+
+.clues-section li {
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.clues-section li:hover {
+  color: #4b5563;
+}
+
+.clues-section li.active {
+  color: #2563eb;
+  font-weight: 500;
+}
+
+#checkBtn {
+  background: #10b981;
+}
+
+#hintBtn {
+  background: #6b7280;
+}
+
+#resetBtn {
+  background: #f33a1a;
+}

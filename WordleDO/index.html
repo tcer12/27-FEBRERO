@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Wordle Dominicano - Un juego de palabras basado en la historia y cultura de la República Dominicana"
+    />
+    <meta
+      name="keywords"
+      content="wordle, dominicano, juego, palabras, historia, cultura, república dominicana"
+    />
+    <meta name="theme-color" content="#4CAF50" />
+    <meta property="og:title" content="Wordle Dominicano" />
+    <meta
+      property="og:description"
+      content="¡Juega Wordle Dominicano y aprende sobre la historia y cultura dominicana!"
+    />
+    <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="style.css" />
+      <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    <title>Wordle Dominicano - Historia y Cultura</title>
+  </head>
+  <body>
+    <div id="app">
+      <div>
+        <header class="game-header">
+          <button
+            id="theme-toggle"
+            class="header-button"
+            aria-label="Cambiar tema"
+          >
+            🌙
+          </button>
+          <h1>Wordle Dominicano</h1>
+          <div class="length-selector-container">
+            <select
+              id="length-selector"
+              class="length-selector"
+              aria-label="Seleccionar longitud de palabra"
+            >
+              <option value="5">5 letras</option>
+              <option value="6">6 letras</option>
+              <option value="7">7 letras</option>
+              <option value="8">8 letras</option>
+            </select>
+            <button
+              id="reveal-btn"
+              class="reveal-btn"
+              disabled
+              title="Necesitas 3 intentos fallidos para ver la pista"
+              aria-label="Revelar palabra"
+            >  💡
+            </button>
+          </div>
+        </header>
+        <div>
+          <div id="grid" role="grid" aria-label="Cuadrícula de juego"></div>
+          <div id="keyboard" role="group" aria-label="Teclado virtual"></div>
+          <div class="game-controls">
+            <button
+              id="restart"
+              class="control-button"
+              style="background-color: #3b82f6"
+              aria-label="Reiniciar juego"
+            >
+              Reiniciar
+            </button>
+            <button
+              id="share"
+              class="control-button"
+              style="background-color: #10b981"
+              aria-label="Compartir resultado"
+            >
+         Compartir
+            </button>
+          </div>
+          <div id="message" aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
+    <a class="btn-bottom-left" href="https://27.roanexus.com/"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-left-dashed"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12h6m3 0h1.5m3 0h.5" /><path d="M5 12l6 6" /><path d="M5 12l6 -6" /></svg></a>
+    <script src="main.js"></script>
+  </body>
+</html>

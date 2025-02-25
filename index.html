@@ -17,16 +17,16 @@
     <section class="container">
       <h2 class="title">¡Ponte a Prueba con los Juegos de la Historia Dominicana!</h2>
       <div class="container_mini_1">
-        <a id="img1" href=""><img class="foto" src="./assets/img/desafio_patriotico.webp" alt="X"></a>
-        <a id="img2" href=""><img class="foto" src="./assets/img/crusigrama.jpg" alt="X"></a>
-        <a id="img3" href=""><img class="foto" 
-            src="./assets/img/Imagen de WhatsApp 2025-02-24 a las 14.45.16_e01f1211.jpg" alt="X"></a>
-        <a id="img4" href=""><img class="foto" 
+        <a id="img1" href="./Desafio/index.html"><img class="foto" src="./assets/img/desafio_patriotico.webp" alt="X"></a>
+        <a id="img2" href="./Crucigrama/Crucigrama/index.html"><img class="foto" src="./assets/img/crusigrama.jpg" alt="X"></a>
+        <a id="img3" href="./Slidding puzzle/indexdefinitivo.html"><img class="foto" 
+            src="./assets/img/slidding.jpg" alt="X"></a>
+        <a id="img4" href="./sopa de letra/SOPAPO.html"><img class="foto" 
             src="./assets/img/Imagen de WhatsApp 2025-02-24 a las 14.50.55_005e0a1a.jpg" alt="X"></a>
       </div>
       <div class="container_mini_1">
-        <a id="img5" href=""><img class="foto"  src="./assets/img/elahorcado.jpg" alt="X"></a>
-        <a id="img6" href=""><img class="foto"  src="./assets/img/elahorcado.jpg" alt="X"></a>
+        <a id="img5" href="./El ahorcado/El_ahorcado.html"><img class="foto"  src="./assets/img/elahorcado.jpg" alt="X"></a>
+        <a id="img6" href="./WordleDO/index.html"><img class="foto"  src="./assets/img/Slidding puzle.jpg" alt="X"></a>
       </div>
     </section>
     <div class="alert-container" id="alerta">
@@ -54,6 +54,31 @@
     </defs>
   </svg>
   <script>
+
+     // Función para animar cada imagen con el shake
+  function animateShake(id) {
+    const image = document.getElementById(id);
+    image.style.animation = 'shake 0.5s ease-in-out'; // Activar animación shake
+    
+    // Después de 0.5 segundos, eliminar la animación para reiniciarla
+    setTimeout(() => {
+      image.style.animation = ''; // Reiniciar la animación
+    }, 500);
+  }
+
+  // Función que controla la animación secuencial
+  function animarSecuencial() {
+    let ids = ['img1', 'img4', 'img5', 'img2', 'img3', 'img6']; // Lista de ids de las imágenes
+    let i = 0;
+
+    setInterval(() => {
+      animateShake(ids[i]); // Animar la imagen actual
+      i = (i + 1) % ids.length; // Pasar al siguiente id, reiniciando cuando llegue al final
+    }, 3000); // Intervalo de 5 segundos entre cada animación
+  }
+
+  // Llamamos a la función para iniciar la animación secuencial
+  animarSecuencial();
 
 document.addEventListener("DOMContentLoaded", function () {
     // Bloquear enlaces al inicio

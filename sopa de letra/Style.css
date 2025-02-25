@@ -1,0 +1,152 @@
+/* Estilos generales */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #F5F5F5;
+  color: #374151;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  max-width: 800px;
+  width: 100%;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1E1E1E;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+/* Estilos específicos para el botón */
+.btn-bottom-left {
+  position: fixed;
+  left: 10px;
+  bottom: 10px;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Cambio de color al pasar el mouse por encima */
+.btn-bottom-left:hover {
+  background-color: #2980b9;
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 600px) {
+  .btn-bottom-left {
+      font-size: 14px;
+      padding: 8px 16px;
+  }
+}
+
+.game-container {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.grid {
+  display: grid;
+  gap: 4px;
+  background-color: #E5E7EB;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.cell {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.cell.selected {
+  background-color: #FCD34D;
+}
+
+.word-list {
+  flex: 1;
+}
+
+.word-list h2 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1E1E1E;
+  margin-bottom: 16px;
+}
+
+.word-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.word-list li {
+  font-size: 16px;
+  margin-bottom: 8px;
+  text-decoration: none;
+}
+
+.word-list li.found {
+  text-decoration: line-through;
+  color: #10B981;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.btn {
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn.reset {
+  background-color: #3B82F6;
+  color: white;
+}
+
+.btn.reset:hover {
+  background-color: #2563EB;
+}
+
+.btn.hint {
+  background-color: #6B7280;
+  color: white;
+}
+
+.btn.hint:hover {
+  background-color: #4B5563;
+}

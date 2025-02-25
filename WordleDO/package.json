@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "dev": "servor --reload",
+    "start": "servor --reload"
+  },
+  "dependencies": {
+    "servor": "^4.0.2",
+    "canvas-confetti": "^1.9.2"
+  }
+}

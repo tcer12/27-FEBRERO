@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafío Patriótico</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-color: #f4f4f4;
+      overflow-x: hidden;
+      overflow-y: hidden;
+    }
+    .container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    border-radius: 12px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    height: 100vh; 
+    margin: auto; 
+}
+    #start-screen{
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .button {
+      display: block;
+      margin: 10px auto;
+      padding: 10px 10px;
+      font-size: 16px;
+      border: solid 1px transparent;
+      border-radius: 100px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .button:hover {
+      background-color: #0056b3;
+    }
+
+    .button_inicial{
+      width: 150px;
+      height: 150px;
+      display: block;
+      margin: 10px auto;
+      padding: 10px 10px;
+      font-size: 16px;
+      border: solid 1px transparent;
+      border-radius: 100px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+      animation: popEffect 0.5s ease-in-out infinite alternate;
+    }
+
+    #option1{
+      background-color: #fef3c7;
+      color: black;
+      border: 2px solid transparent;
+      border-radius: 20px;
+      font-size: 35px;
+      width: 350px;
+      height: 250px;
+    }
+
+    #option2{
+      background-color: #10B981;
+      color: black;
+      border: 2px solid transparent;
+      border-radius: 20px;
+      font-size: 35px;
+      width: 350px;
+      height: 250px;
+    }
+    #option3{
+      background-color: #EF4444;
+      color: black;
+      border: 2px solid transparent;
+      border-radius: 20px;
+      font-size: 35px;
+      width: 350px;
+      height: 250px;
+    }
+
+    .img{
+      width: 550px;
+    }
+
+    
+    .question {
+      font-size: 25px;
+      margin-bottom: 20px;
+    }
+    .score {
+      margin-top: 15px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+    .timer {
+      font-size: 16px;
+      color: red;
+      margin-bottom: 15px;
+    }
+
+    @keyframes popEffect {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    30% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    60% {
+        transform: scale(0.9);
+    }
+    80% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+  }
+  @media (max-width: 1200px) {
+  .container {
+    max-width: 1000px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  #start-screen {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    justify-content: center;
+  }
+  .img {
+    width: 450px;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 800px;
+    text-align: center;
+  }
+  #start-screen {
+    grid-template-columns: 1fr;
+    gap: 10px; /* Espacio entre los botones */
+  }
+  .img {
+    width: 600px;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 600px;
+    text-align: center;
+  }
+  #start-screen {
+    grid-template-columns: 1fr;
+    gap: 10px; 
+  }
+  .img {
+    width: 550px;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    max-width: 100%;
+    padding: 10px;
+    text-align: center;
+  }
+  #start-screen {
+    grid-template-columns: 1fr;
+    gap: 10px; /* Espacio entre los botones */
+  }
+  .img {
+    width: 350px;
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 400px) {
+  #start-screen {
+    grid-template-columns: 1fr;
+    gap: 10px; 
+  }
+  .img {
+    width: 250px;
+    margin-top: 60px;
+  }
+}
+
+/* Estilos específicos para el botón */
+.btn-bottom-left {
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Cambio de color al pasar el mouse por encima */
+.btn-bottom-left:hover {
+    background-color: #2980b9;
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 600px) {
+    .btn-bottom-left {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+  </style>
+</head>
+<body>
+  <div class="container" id="quiz-container">
+    <div id="start-screen">
+      <div class="text_container">
+        <h1>Desafío Patriótico</h1>
+        <br>
+        <br>
+        <button class="button_inicial" id="start-button"><svg  xmlns="http://www.w3.org/2000/svg"  width="64"  height="64"  viewBox="0 0 24 24"  fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-player-play"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z" /></svg></button>
+      </div>
+      <div>
+        <img class="img" src="./fondo_patria.webp" alt="Foto patria">
+      </div>
+    </div>
+    <div id="question-screen" style="display: none;">
+      <div class="timer" id="timer">Tiempo: 10</div>
+      <div class="question" id="question"></div>
+      <button id="option1"></button>
+      <button id="option2"></button>
+      <button id="option3"></button>
+    </div>
+    <div id="result-screen" style="display: none;">
+      <h1>Desafío Patriótico Completado!</h1>
+      <div class="score" id="final-score"></div>
+      <a class="button" href="https://27.roanexus.com/">Volver</a>
+    </div>
+  </div>
+
+  <a class="btn-bottom-left" href="https://27.roanexus.com/"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-left-dashed"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12h6m3 0h1.5m3 0h.5" /><path d="M5 12l6 6" /><path d="M5 12l6 -6" /></svg></a>
+
+
+  <script>
+    const startButton = document.getElementById('start-button');
+    const restartButton = document.getElementById('restart-button');
+    const questionScreen = document.getElementById('question-screen');
+    const startScreen = document.getElementById('start-screen');
+    const resultScreen = document.getElementById('result-screen');
+    const questionText = document.getElementById('question');
+    const timerText = document.getElementById('timer');
+    const finalScore = document.getElementById('final-score');
+    const buttons = [
+      document.getElementById('option1'),
+      document.getElementById('option2'),
+      document.getElementById('option3')
+    ];
+
+    const questions = [
+      {
+        question: "¿Cuál era el nombre de la sociedad secreta fundada por Juan Pablo Duarte para luchar por la independencia?",
+        options: ["La Trinitaria", "Los Illuminatis", "El Coro"],
+        answer: 0
+      },
+      {
+        question: "¿Quién fue el líder principal del movimiento independentista dominicano?",
+        options: ["Simón Bolívar", "Juan Pablo Duarte", "Antonio Maceo"],
+        answer: 1
+      },
+      {
+        question: " ¿Cómo se llama el himno nacional de la República Dominicana?",
+        options: ["Canto a la Patria Dominicana", " Quisqueya Bella de mi corazón", "Himno Nacional Dominicano"],
+        answer: 2
+      },
+      {
+        question: " ¿Cuál de estos es un género musical tradicional dominicano?",
+        options: ["Samba", "Merengue", "Reggaeton"],
+        answer: 1
+      },
+      {
+        question: "  ¿Cuál es el árbol nacional de la República Dominicana?",
+        options: ["Caoba", "Ceiba", "Roble"],
+        answer: 0
+      },
+      {
+        question: " ¿Qué día se celebra la Restauración de la República Dominicana?",
+        options: ["16 de agosto", "27 de febrero", "8 de diciembre"],
+        answer: 0
+      }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+    let timer;
+    let timeLeft = 10;
+
+    function startGame() {
+      score = 0;
+      currentQuestion = 0;
+      startScreen.style.display = 'none';
+      questionScreen.style.display = 'block';
+      resultScreen.style.display = 'none';
+      loadQuestion();
+    }
+
+    function loadQuestion() {
+      if (currentQuestion >= questions.length) {
+        endGame();
+        return;
+      }
+      timeLeft = 10;
+      timerText.textContent = `Time left: ${timeLeft}`;
+      questionText.textContent = questions[currentQuestion].question;
+      buttons.forEach((button, index) => {
+        button.textContent = questions[currentQuestion].options[index];
+        button.onclick = () => checkAnswer(index);
+      });
+      startTimer();
+    }
+
+    function startTimer() {
+      clearInterval(timer);
+      timer = setInterval(() => {
+        timeLeft--;
+        timerText.textContent = `Time left: ${timeLeft}`;
+        if (timeLeft <= 0) {
+          clearInterval(timer);
+          nextQuestion();
+        }
+      }, 1000);
+    }
+
+    function checkAnswer(selected) {
+      clearInterval(timer);
+      if (selected === questions[currentQuestion].answer) {
+        score++;
+      }
+      nextQuestion();
+    }
+
+    function nextQuestion() {
+      currentQuestion++;
+      loadQuestion();
+    }
+
+    function endGame() {
+      questionScreen.style.display = 'none';
+      resultScreen.style.display = 'block';
+      finalScore.textContent = `Puntuación Final: ${score}/${questions.length}`;
+    }
+
+    function restartGame() {
+      startScreen.style.display = 'block';
+      questionScreen.style.display = 'none';
+      resultScreen.style.display = 'none';
+    }
+
+    startButton.onclick = startGame;
+    restartButton.onclick = restartGame;
+  </script>
+</body>
+</html>
