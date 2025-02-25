@@ -18,6 +18,7 @@
       <h2 class="title">¡Ponte a Prueba con los Juegos de la Historia Dominicana!</h2>
       <div class="container_mini_1">
         <a id="img1" href="./Desafio/index.html"><img class="foto" src="./assets/img/desafio_patriotico.webp" alt="X"></a>
+        <a id="img2" href="./Quiz Patriota/mapa.html"><img class="foto" src="./assets/img/mapa.jpg" alt="X"></a>
         <a id="img2" href="./Crucigrama/Crucigrama/index.html"><img class="foto" src="./assets/img/crusigrama.jpg" alt="X"></a>
         <a id="img3" href="./Slidding puzzle/indexdefinitivo.html"><img class="foto" 
             src="./assets/img/Slidding puzle.jpg" alt="X"></a>
@@ -27,6 +28,9 @@
       <div class="container_mini_1">
         <a id="img5" href="./El ahorcado/El_ahorcado.html"><img class="foto"  src="./assets/img/elahorcado.jpg" alt="X"></a>
         <a id="img6" href="./WordleDO/index.html"><img class="foto"  src="./assets/img/slidding.jpg " alt="X"></a>
+        <a id="img7" href="./Quiz Patriota/presentacion.html"><img class="foto"  src="./assets/img/quizzpatriota.jpg " alt="X"></a>
+        <a id="img8" href="https://tcer12.github.io/Prueba/"><img class="foto"  src="./assets/img/quizzyano.jpg" alt="X"></a>
+        <a id="img8" href="https://tcer12.github.io/x/"><img class="foto"  src="./assets/img/patriapley.jpg" alt="X"></a>
       </div>
     </section>
     <div class="alert-container" id="alerta">
@@ -68,13 +72,13 @@
 
   // Función que controla la animación secuencial
   function animarSecuencial() {
-    let ids = ['img1', 'img4', 'img5', 'img2', 'img3', 'img6']; // Lista de ids de las imágenes
+    let ids = ['img1', 'img4', 'img5', 'img2', 'img3', 'img6', 'img7', 'img8']; 
     let i = 0;
 
     setInterval(() => {
-      animateShake(ids[i]); // Animar la imagen actual
-      i = (i + 1) % ids.length; // Pasar al siguiente id, reiniciando cuando llegue al final
-    }, 3000); // Intervalo de 5 segundos entre cada animación
+      animateShake(ids[i]); 
+      i = (i + 1) % ids.length;
+    }, 3000); 
   }
 
   // Llamamos a la función para iniciar la animación secuencial
@@ -82,11 +86,11 @@
 
 document.addEventListener("DOMContentLoaded", function () {
     // Bloquear enlaces al inicio
-    const links = document.querySelectorAll("#img1, #img2, #img3, #img4, #img5, #img6");
+    const links = document.querySelectorAll("#img1, #img2, #img3, #img4, #img5, #img6, #img7, #img8");
 
     links.forEach(link => {
-        link.style.pointerEvents = "none"; // Deshabilita el clic
-        link.style.opacity = "0.5"; // Visualmente indicar que está bloqueado
+        link.style.pointerEvents = "none"; 
+        link.style.opacity = "0.5"; 
     });
 
     // Función para cerrar la alerta y desbloquear enlaces
@@ -95,8 +99,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Desbloquear enlaces
         links.forEach(link => {
-            link.style.pointerEvents = "auto"; // Activa los clics
-            link.style.opacity = "1"; // Restaura la opacidad normal
+            link.style.pointerEvents = "auto"; 
+            link.style.opacity = "1"; 
         });
     }
 
@@ -114,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Ocultar todos los demás elementos excepto .containerr
       allElements.forEach(el => {
-        el.style.opacity = "0";  // En lugar de display:none, usamos opacity para evitar problemas de reflujo
+        el.style.opacity = "0";  
         el.style.visibility = "hidden";
       });
 

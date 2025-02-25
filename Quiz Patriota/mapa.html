@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Interactivo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            text-align: center; 
+            margin: 0; 
+            overflow: hidden; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            height: 100vh; 
+        }
+        #contenedorMapa {
+            width: 95%; 
+            height: 90vh; 
+            margin-bottom: 20px; 
+            border: 1px solid #ccc; 
+            border-radius: 10px; 
+            overflow: hidden; 
+        }
+        #mapa { 
+            width: 100%; 
+            height: 100%; 
+        }
+        #popupInicio {
+            position: fixed;
+            top: 50%; 
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            z-index: 1000;
+        }
+        #popupJuego {
+            position: fixed;
+            top: 50%; 
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            z-index: 1000;
+            display: none; /* Oculto inicialmente */
+        }
+        #popupInicio button, #popupTerminar button, #popupContinuar, #popupJuego button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-top: 10px; /* Espacio superior para el botón */
+        }
+        #popupInicio button:hover, #popupTerminar button:hover, #popupContinuar:hover, #popupJuego button:hover {
+            background-color: #0056b3; 
+            transform: scale(1.05); 
+        }
+        #popupContinuar, #popupTerminar {
+            background-color: #28a745; 
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+            text-align: center; 
+            display: block; 
+            margin: 10px auto; 
+        }
+        #popupContinuar:hover, #popupTerminar:hover {
+            background-color: #218838; 
+            transform: scale(1.05); 
+        }
+        .popupContenido {
+            text-align: center; 
+        }
+        .popupContenido a {
+            text-align: center; 
+            list-style: none;
+            color: #ccc;
+        }
+
+        /* Estilos específicos para el botón */
+.btn-bottom-left {
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Cambio de color al pasar el mouse por encima */
+.btn-bottom-left:hover {
+    background-color: #2980b9;
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 600px) {
+    .btn-bottom-left {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+    
+    </style>
+</head>
+<body>
+    <div id="contenedorMapa">
+        <div id="mapa"></div>
+    </div>
+    <div id="popupInicio">
+        <h2>¿Quieres comenzar el recorrido?</h2>
+        <p>En este recorrido, explorarás importantes sitios históricos de la República Dominicana, donde se libraron batallas clave en la lucha por la independencia. ¡Haz clic en "Aceptar" para comenzar!</p>
+        <button onclick="iniciarRecorrido()">Aceptar</button>
+    </div>
+
+    <div id="popupJuego">
+        <h2>¡Bienvenido al Juego de Preguntas!</h2>
+        <p>Prepárate para poner a prueba tus conocimientos sobre la historia de la República Dominicana. Responde a preguntas sobre batallas y personajes clave. ¡Diviértete y aprende mientras juegas!</p>
+        <p>Gracias por participar. Cada respuesta correcta te acerca a ser un experto en nuestra historia. ¡Hasta la próxima y sigue explorando!</p>
+        <button><a href="presentacion.html">jugar</a></button>
+    </div>
+
+    <a class="btn-bottom-left" href="https://27.roanexus.com/"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-left-dashed"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12h6m3 0h1.5m3 0h.5" /><path d="M5 12l6 6" /><path d="M5 12l6 -6" /></svg></a>
+    
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var mapa = L.map('mapa', {
+                center: [18.7357, -70.1627],
+                zoom: 8,
+                minZoom: 8
+            });
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(mapa);
+
+            var marcadores = [];
+            var marcadoresAgregados = false; // Controla si los marcadores han sido agregados
+
+            window.iniciarRecorrido = function() {
+                document.getElementById("popupInicio").style.display = "none";
+                if (!marcadoresAgregados) {
+                    agregarMarcadores(); // Llama a la función para agregar marcadores
+                    marcadoresAgregados = true; // Marcar que los marcadores han sido agregados
+                }
+                mostrarMarcador(indiceActual);
+            };
+
+            function agregarMarcadores() {
+                marcadores = [
+                    {
+                        nombre: 'Batalla del Memiso en Azua el 13 de marzo de 1844',
+                        coordenadas: [18.4000, -70.8500],
+                        imagen: 'img/1.jpg',
+                        descripcion: 'La Batalla del Memiso fue un enfrentamiento clave que ayudó a consolidar el control dominicano en la región.'
+                    },
+                    {
+                        nombre: 'Batalla del 19 de marzo de 1844 en Azua',
+                        coordenadas: [18.4000, -70.8500],
+                        imagen: 'img/2.jpg',
+                        descripcion: 'La Batalla del 19 de marzo de 1844 fue una de las primeras confrontaciones militares tras la declaración de independencia de la República Dominicana.'
+                    },
+                    {
+                        nombre: 'Batalla del 30 de marzo de 1844 en Santiago',
+                        coordenadas: [19.4822, -70.6822],
+                        imagen: 'img/3.jpg',
+                        descripcion: 'Esta batalla fue crucial para la defensa de Santiago durante los primeros días de la independencia dominicana.'
+                    },
+                    {
+                        nombre: 'Batalla Naval de Puerto Tortuguero el 13 de abril de 1844 en Azua',
+                        coordenadas: [18.4000, -70.8500],
+                        imagen: 'img/4.jpg',
+                        descripcion: 'Un enfrentamiento naval que resultó en una victoria dominicana, asegurando el control de las aguas cercanas.'
+                    },
+                    {
+                        nombre: 'Batalla de la Estrelleta en Elías Piña el 17 de septiembre de 1845',
+                        coordenadas: [19.0942, -71.3692],
+                        imagen: 'img/5.jpg',
+                        descripcion: 'Esta batalla fue parte de la lucha contra las incursiones haitianas en el territorio dominicano.'
+                    },
+                    {
+                        nombre: 'Creación de la Constitución Dominicana – 6 de noviembre de 1844 en San Cristóbal',
+                        coordenadas: [18.4800, -70.0100],
+                        imagen: 'img/6.jpg',
+                        descripcion: 'La creación de la primera constitución dominicana fue un hito fundamental en la historia del país, estableciendo los principios de la nueva nación.'
+                    },
+                    {
+                        nombre: 'Batalla de Beller en Dajabón el 28 de octubre de 1845',
+                        coordenadas: [19.5497, -71.7086],
+                        imagen: 'img/7.jpg',
+                        descripcion: 'Un enfrentamiento estratégico en la defensa de la frontera dominicana contra las incursiones haitianas.'
+                    },
+                    {
+                        nombre: 'Batalla del Número en Azua el 17 de abril de 1849',
+                        coordenadas: [18.4000, -70.8500],
+                        imagen: 'img/8.jpg',
+                        descripcion: 'Un enfrentamiento importante que reafirmó la resistencia dominicana contra las fuerzas haitianas.'
+                    },
+                    {
+                        nombre: 'Batalla de Santomé en San Juan el 22 de diciembre de 1855',
+                        coordenadas: [18.8050, -71.2297],
+                        imagen: 'img/9.jpg',
+                        descripcion: 'Un enfrentamiento crucial en la guerra dominico-haitiana, donde las fuerzas dominicanas lograron una victoria decisiva.'
+                    },
+                    {
+                        nombre: 'Batalla de Cambronal en Neiba el 22 de diciembre de 1855',
+                        coordenadas: [18.3950, -71.3350],
+                        imagen: 'img/10.jpeg',
+                        descripcion: 'Una batalla que tuvo lugar en el contexto de la guerra dominico-haitiana, con un resultado favorable para los dominicanos.'
+                    },
+                    {
+                        nombre: 'Batalla de la Sabana Larga en Dajabón el 24 de enero de 1856',
+                        coordenadas: [19.5833, -71.6333],
+                        imagen: 'img/11.jpeg',
+                        descripcion: 'Una de las últimas grandes batallas entre dominicanos y haitianos, consolidando la independencia de la República Dominicana.'
+                    }
+                ];
+
+                marcadores.forEach(function(marcador) {
+                    var icono = L.icon({
+                        iconUrl: "img/Adobe Express - file.png", 
+                        iconSize: [38, 38],
+                        iconAnchor: [19, 38],
+                        popupAnchor: [0, -38] 
+                    });
+
+                    L.marker(marcador.coordenadas, { icon: icono })
+                        .addTo(mapa)
+                        .bindPopup(`<strong>${marcador.nombre}</strong><br>${marcador.descripcion}`);
+                });
+            }
+
+            var indiceActual = 0;
+
+            function mostrarMarcador(indice) {
+                var lugar = marcadores[indice];
+                mapa.flyTo(lugar.coordenadas, 12, {
+                    animate: true,
+                    duration: 2 
+                });
+
+                var contenidoPopup = `
+                    <div class="popupContenido">
+                        <h3>${lugar.nombre}</h3>
+                        <img src="${lugar.imagen}" alt="${lugar.nombre}" style="width:100%; max-width:300px;">
+                        <p>${lugar.descripcion}</p>
+                        ${indice < marcadores.length - 1 ? '<button id="popupContinuar" onclick="mostrarSiguiente()">➡ Continuar</button>' : '<button id="popupTerminar" onclick="finalizarRecorrido()">Terminar</button>'}
+                    </div>
+                `;
+
+                L.popup({ closeOnClick: false }).setLatLng(lugar.coordenadas).setContent(contenidoPopup).openOn(mapa);
+            }
+
+            window.mostrarSiguiente = function() {
+                indiceActual++;
+                if (indiceActual < marcadores.length) {
+                    mostrarMarcador(indiceActual);
+                } else {
+                    finalizarRecorrido(); // Llama a finalizarRecorrido si se llega al final
+                }
+            };
+
+            window.finalizarRecorrido = function() {
+                var popup = document.querySelector('.leaflet-popup');
+                if (popup) {
+                    popup.remove();
+                }
+                mapa.setView([18.7357, -70.1627], 8); // Zoom inicial para ver todo el mapa
+                document.getElementById("popupJuego").style.display = "block"; // Muestra el popup de juego
+                // Eliminar marcadores del mapa
+                mapa.eachLayer(function(layer) {
+                    if (layer instanceof L.Marker) {
+                        mapa.removeLayer(layer);
+                    }
+                });
+            };
+        });
+    </script>
+</body>
+</html>
+
