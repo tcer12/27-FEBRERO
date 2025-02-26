@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta 10</title>
+    <link rel="stylesheet" href="juego.css">
+</head>
+<body>
+    <div class="container">
+        <h1> ¿Quién de las siguientes mujeres fue una activista por la independencia pero no tan reconocida?</h1>
+        <div class="opciones">
+            <div class="opcion" onclick="seleccionarRespuesta(this, false)">
+                <img src="IMG/juana3.jpg">
+                <p>Juana Saltitopa</p>
+            </div>
+            <div class="opcion" onclick="seleccionarRespuesta(this, true)">
+                <img src="IMG/Isabel.png">
+                <p>Isabel Sosa</p>
+            </div>
+            <div class="opcion" onclick="seleccionarRespuesta(this, false)">
+                <img src="IMG/rosad.jpg">
+                <p>Rosa Duarte</p>
+            </div>
+        </div>
+        <button id="continuar-btn" class="hidden" onclick="continuar()">Continuar</button>
+    </div>
+    <script src="juego.js"> </script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pantalla de Juego</title>
+    <link rel="stylesheet" href="RespuestaCorrecta.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="message">Respuesta correcta</div>
+        <div class="frame">
+            <img src="IMG/Concepcion bona.jpeg" alt="Juan Pablo Duarte">
+        </div>
+        <div class="scroll">
+            <div class="scroll-text">
+                Concepción Bona (1824-1901) fue una patriota dominicana reconocida por su participación en la
+                independencia de la República Dominicana. Nació el 6 de diciembre de 1824 en Santo Domingo y desde joven
+                mostró un gran espíritu patriótico.
+
+                Es conocida por haber confeccionado, junto con María Trinidad Sánchez, la primera bandera dominicana, la
+                cual fue enarbolada el 27 de febrero de 1844, cuando se proclamó la independencia del país.
+            </div>
+        </div>
+        <a href="pregunta4.html"><button class="button" onclick="nextScreen()">Siguiente</button></a>
+    </div>
+
+    <script src="juego.js"></script>
+</body>
+
+</html>
+
+<style>
+    /* Asegura que el body y la página estén bien centrados */
+    body {
+        background-color: #f8f0e3;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    /* Ajusta el contenedor para que esté completamente centrado */
+    .container {
+        width: 100%;
+        max-width: 600px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .frame {
+        padding: 10px;
+        border: 10px solid #c4a484;
+        border-radius: 10px;
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: center;
+    }
+
+    .frame img {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 5px;
+    }
+
+    .message {
+        font-size: 26px;
+        font-weight: bold;
+        color: #6b4226;
+        margin-top: 15px;
+        font-family: 'Georgia', serif;
+        margin-bottom: 20px;
+    }
+
+    .scroll {
+        background: #e3cba4;
+        padding: 15px;
+        border-radius: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        width: 100%;
+        max-width: 500px;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Georgia', serif;
+        border: 3px solid #8b5e3c;
+        text-align: center;
+    }
+
+    .scroll::before,
+    .scroll::after {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background: url('https://i.imgur.com/I5Kc50W.png') no-repeat center;
+        background-size: contain;
+    }
+
+    .button {
+        background: linear-gradient(to top, #dcdcdc, #ffffff);
+        border: 2px solid #999;
+        padding: 10px 20px;
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 20px;
+        cursor: pointer;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+        font-family: 'Arial', sans-serif;
+    }
+
+    .button:hover {
+        background: #bbb;
+    }
+</style>
+
+<script>
+    function nextScreen() {
+        window.location.href = 'RespuestaCorrecta8.html';
+    }
+</script>

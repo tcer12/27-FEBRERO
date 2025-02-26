@@ -1,0 +1,106 @@
+body {
+    text-align: center;
+    background-image: url(IMG/fondo1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 0;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Oscurecimiento sutil */
+    z-index: 0;
+}
+
+.container, .title, .buttons, .character {
+    position: relative;
+    z-index: 1;
+}
+
+.title {
+    font-size: 3.6em;
+    font-weight: bold;
+    margin: 0px;
+    margin-top: 40px;
+}
+.red { color: red; }
+.blue { color: blue; }
+.flags {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.flag {
+    width: 100%;
+    display: block;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+.character img {
+    width: 120px;
+}
+.character.left {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+}
+.character.right {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+    z-index: 2;
+    margin: 0px;
+    margin-top: 100px;
+}
+
+button {
+    background: white;
+    border: 1px solid rgb(0, 47, 255);
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 20px;
+    box-shadow: 2px 2px 4px rgb(187, 187, 187);
+    width: 220px;
+    height: 45px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out, background 0.3s ease-out;
+}
+
+button:hover {
+    transform: scale(1.1) translateY(-5px); /* Aumenta el tamaño y sube */
+    background: rgb(0, 47, 255); /* Color de fondo al pasar el cursor */
+    color: white; /* Cambia el color del texto */
+    box-shadow: 4px 4px 8px rgba(0, 47, 255, 0.3); /* Sombras más intensas */
+}

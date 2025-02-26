@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta 14</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+ 
+ <div class="container">
+ <h1> ¿A cual de estas mujeres la fusilaron tras la independencia?</h1>
+
+ <div class="opciones">
+     <div class="opcion" onclick="seleccionarRespuesta(this, false)">
+         <img src="IMG/rosa.jpg">
+        
+         <p>Rosa Duarte y Diez</p>
+     </div>
+     <div class="opcion" onclick="seleccionarRespuesta(this, true)">
+         <img src="IMG/maria.jpg">
+        
+         <p>Maria Trinidad Sanchez</p>
+     </div>
+     <div class="opcion" onclick="seleccionarRespuesta(this, false)">
+         <img src="img/ana.jpg">
+        
+         <p>Ana Valverde</p>
+     </div>
+ </div>
+ <button id="continuar-btn" class="hidden" onclick="continuar()">Continuar</button>
+</div>
+<script src="juego.js"></script>
+</body>
+</html>

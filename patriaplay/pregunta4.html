@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta 4</title>
+    <link rel="stylesheet" href="juego.css">
+</head>
+<body>
+    <div class="container">
+        <h1>¿Qué patriota fue exiliado y murió en Venezuela en 1876?</h1>
+        <div class="opciones">
+            <div class="opcion" onclick="seleccionarRespuesta(this, true)">
+                <img src="img/pablo.png" alt="Juan Pablo Duarte">
+                <p>Juan Pablo Duarte</p>
+            </div>
+            <div class="opcion" onclick="seleccionarRespuesta(this, false)('fue un militar y político dominicano, considerado uno de los Padres de la Patria por su papel clave en la independencia de la República Dominicana.')">
+                <img src="img/ramon.jpg" alt="Ramón Matías Mella">
+                <p>Ramón Matías Mella</p>
+            </div>
+            <div class="opcion" onclick="seleccionarRespuesta(this, false)('fue una patriota dominicana del siglo XIX que apoyó activamente la lucha por la independencia de la República Dominicana.')">
+                <img src="img/micaela.jpg" alt="Micaela de Rivera">
+                <p>Micaela de Rivera</p>
+            </div>
+        </div>
+        <button id="continuar-btn" class="hidden" onclick="continuar()">Continuar</button>
+    </div>
+    <script src="juego.js"></script>
+</body>
+</html>

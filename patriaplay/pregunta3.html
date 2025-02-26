@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta 3</title>
+    <link rel="stylesheet" href="juego.css">
+</head>
+<body>
+    <div class="container">
+        <h1>¿Quién fue una de las mujeres que bordó la primera bandera dominicana?</h1>
+        <div class="opciones">
+            <div class="opcion" onclick="seleccionarRespuesta(this, false)">
+                <img src="img/isabel.jpg" alt="Isabel Sosa">
+                <p>Isabel Sosa</p>
+            </div>
+            <div class="opcion" onclick="seleccionarRespuesta(this, true)('Fue una patriota dominicana y una de las creadoras de la primera bandera de la República Dominicana en 1844.')">
+                <img src="img/Concepcion.jpg" alt="Concepción Bona">
+                <p>Concepción Bona</p>
+            </div>
+            <div class="opcion" onclick="seleccionarRespuesta(this, false)('Fue una patriota dominicana y la madre de Juan Pablo Duarte, el fundador de la República Dominicana.')">
+                <img src="img/manuela.jpg" alt="Manuela Diez">
+                <p>Manuela Diez</p>
+            </div>
+        </div>
+        <button id="continuar-btn" class="hidden" onclick="continuar()">Continuar</button>
+    </div>
+    <script src="juego.js"></script>
+</body>
+</html>

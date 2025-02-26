@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta 2</title>
+    <link rel="stylesheet" href="juego.css">
+</head>
+<body>
+    <div class="container" id="quiz-container">
+        <h1>¿Cuál de estos patriotas disparó el trabucazo en la Puerta del Conde el 27 de febrero de 1844?</h1>
+        <div class="opciones">
+            <div class="opcion" onclick="seleccionarRespuesta(this, true)">
+                <img src="img/ramon.jpg" alt="Ramón Matías Mella">
+                <p>Ramón Matías Mella</p>
+            </div>
+            <div class="opcion" onclick="seleccionarRespuesta(this, false)('Francisco del Rosario Sánchez, no participó en la confección de la bandera.')">
+                <img src="img/sanchez.jpg" alt="Francisco del Rosario Sánchez">
+                <p>Francisco del Rosario Sánchez</p>
+            </div>
+            <div class="opcion" onclick="seleccionarRespuesta(this, false)('fue una patriota dominicana, hermana de Juan Pablo Duarte, el fundador de la República Dominicana. Jugó un papel clave en la lucha independentista contra la ocupación haitiana y en la creación de la sociedad secreta La Trinitaria, apoyando a su hermano y a otros revolucionarios.')">
+                <img src="img/rosa.jpg" alt="Rosa Duarte y Diez">
+                <p>Rosa Duarte y Diez</p>
+            </div>
+        </div>
+        <button id="continuar-btn" class="hidden" onclick="continuar()">Continuar</button>
+    </div>
+    <script src="juego.js"></script>
+</body>
+</html>

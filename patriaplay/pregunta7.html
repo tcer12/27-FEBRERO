@@ -1,0 +1,30 @@
+<html>
+<html lang="es">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta 7</title>
+    <link rel="stylesheet" href="juego.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>¿Qué relación tenía Rosa Duarte con Juan Pablo Duarte? </h1>
+            <div class="opciones">
+            <div class="opcion" onclick="seleccionarRespuesta(this, true)()">
+                <img src="img/rosad.jpg">
+                <p>Hermanos</p>
+            </div>
+            <div class="opcion" onclick="seleccionarRespuesta(this, false)()">
+                <img src="img/rosad2.png">
+                <p>Esposos</p>
+            </div>
+            <div class="opcion" onclick="seleccionarRespuesta(this, false)()">
+                <img src="img/rosad3.jpg">
+                <p>Padre e hija</p>
+            </div>
+        </div>
+            <button id="continuar-btn" class="hidden" onclick="continuar()">Continuar</button>
+        </div>
+    <script src="juego.js"></script>
+    </body>
+</html>

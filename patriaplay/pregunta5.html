@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta 5</title>
+    <link rel="stylesheet" href="juego.css">
+</head>
+<body>
+    <div class="container">
+        <h1>¿Quién fue conocida como la "Madre de la Patria"?</h1>
+        <div class="opciones">
+            <div class="opcion" onclick="seleccionarRespuesta(this, false)()">
+                <img src="img/Concepcion.jpg" alt="Concepción Bona">
+                <p>Concepción Bona</p>
+            </div>
+            <div class="opcion" onclick="seleccionarRespuesta(this, true)('fue una heroína de la independencia de la República Dominicana, recordada por su valentía y sacrificio.')">
+                <img src="img/María_Trinidad_Sánchez.png" alt="María Trinidad Sánchez">
+                <p>María Trinidad Sánchez</p>
+            </div>
+            <div class="opcion" onclick="seleccionarRespuesta(this, false)(' fue una patriota dominicana que apoyó activamente la lucha por la independencia de la República Dominicana.')">
+                <img src="img/micaela.jpg" alt="Josefa Antonia Pérez">
+                <p>Josefa Antonia Pérez</p>
+            </div>
+        </div>
+        <button id="continuar-btn" class="hidden" onclick="continuar()">Continuar</button>
+    </div>
+    <script src="juego.js"></script>
+</body>
+</html>

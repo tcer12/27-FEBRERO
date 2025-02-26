@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta 1</title>
+    <link rel="stylesheet" href="juego.css">
+</head>
+<body>
+    <div class="container" id="quiz-container">
+        <h1>¿Quién es considerado el principal fundador de la República Dominicana?</h1>
+        <div class="opciones">
+            <div class="opcion" onclick="seleccionarRespuesta(this, false)">
+                <img src="IMG/mella.jpg" alt="Ramón Matías Mella">
+                <p>Ramón Matías Mella</p>
+            </div>
+            <div class="opcion" onclick="seleccionarRespuesta(this, false)">
+                <img src="IMG/sanchez.jpg" alt="Francisco del Rosario Sánchez">
+                <p>Francisco del Rosario Sánchez</p>
+            </div>
+            <div class="opcion" onclick="seleccionarRespuesta(this, true)">
+                <img src="IMG/pablo.png" alt="Juan Pablo Duarte">
+                <p>Juan Pablo Duarte</p>
+            </div>
+        </div>
+        <button id="continuar-btn" class="hidden" onclick="continuar()">Continuar</button>
+    </div>
+    <script src="juego.js"></script>
+</body>
+</html>
+

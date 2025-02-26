@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta 13</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+ 
+ <div class="container">
+ <h1> ¿Quién ayudó a la causa independentista proporcionando recursos económicos?</h1>
+
+ <div class="opciones">
+     <div class="opcion" onclick="seleccionarRespuesta(this, false)">
+         <img src="img/rosa.jpg">
+        
+         <p>Rosa Duarte y Diez</p>
+     </div>
+     <div class="opcion" onclick="seleccionarRespuesta(this, true)">
+         <img src="img/matias.jpg">
+        
+         <p> Matias Ramon Mella</p>
+     </div>
+     <div class="opcion" onclick="seleccionarRespuesta(this, false)">
+         <img src="img/micaela.jpg">
+        
+         <p>Micaela de Rivera</p>
+     </div>
+ </div>
+ <button id="continuar-btn" class="hidden" onclick="continuar()">Continuar</button>
+</div>
+<script src="juego.js"></script>
+</body>

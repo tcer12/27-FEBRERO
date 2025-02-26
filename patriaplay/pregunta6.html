@@ -1,0 +1,30 @@
+<html>
+<html lang="es">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta 6</title>
+    <link rel="stylesheet" href="juego.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>¿Qué papel desempeñó Juana Saltitopa en la guerra de independencia?</h1>
+            <div class="opciones">
+            <div class="opcion" onclick="seleccionarRespuesta(this, false)()">
+                <img src="img/juana3.jpg" alt="Juana">
+                <p>Periodista</p>
+            </div>
+            <div class="opcion" onclick="seleccionarRespuesta(this, true)()">
+                <img src="img/juana.jpg">
+                <p>Combatiente</p>
+            </div>
+            <div class="opcion" onclick="seleccionarRespuesta(this, false)()">
+                <img src="img/juana2.png">
+                <p>Haitiana</p>
+            </div>
+        </div>
+            <button id="continuar-btn" class="hidden" onclick="continuar()">Continuar</button>
+        </div>
+    <script src="juego.js"></script>
+    </body>
+</html>
