@@ -1,0 +1,289 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0.979);
+    background-image: url(/projectoindependencia/carru27/carru/img/Flag\ of\ Dominican\ Republic\ in\ grunge\ style\ with\ waving\ effect_\ \(1\).jpeg);
+    background-repeat: no-repeat;
+    background-size: 95%;
+    background-position: 0%;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background: #ff2424;
+    border-radius: 10px;
+  }
+
+/* Menú Interactivo (Patriótico) */
+/* Estilos generales del menú */
+.menu {
+    background: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  /* Logo del menú */
+  .menu-logo img {
+    height: 50px;
+    transition: transform 0.3s ease;
+  }
+  
+  .menu-logo img:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Lista de enlaces del menú */
+  .menu-list {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+  }.menu {
+    background: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .menu-logo img {
+    height: 50px;
+    transition: transform 0.3s ease;
+  }
+  
+  .menu-logo img:hover {
+    transform: scale(1.1);
+  }
+  
+  .menu-titulo {
+    text-align: center;
+    margin: 0 20px;
+  }
+  
+  .menu-titulo h1 {
+    font-size: 1.5em;
+    color: #002D62; /* Azul oscuro */
+    margin: 0;
+  }
+  
+  .menu-titulo p {
+    font-size: 0.8em;
+    color: #555;
+    margin: 0;
+  }
+  
+  .menu-list {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu-link {
+    color: #002D62; /* Azul oscuro */
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 500;
+    padding: 10px 15px;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  .menu-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #CE1126; /* Rojo */
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+  }
+  
+  .menu-link:hover {
+    color: #CE1126; /* Rojo al hacer hover */
+  }
+  
+  .menu-link:hover::after {
+    width: 100%;
+  }
+  .intro {
+    background-color: #8d4928;
+    color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .intro h1 {
+    margin-bottom: 10px;
+  }
+/* Estilos generales para la sección de personajes */
+.personajes-section {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  .personajes-section h2 {
+    font-size: 2.5em;
+    color: #002D62;
+    margin-bottom: 30px;
+  }
+  
+  /* Contenedores para los Padres de la Patria */
+  .padres-patria {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
+    flex-wrap: wrap; /* Para que sea responsive */
+  }
+  
+  .personaje-grande {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .personaje-grande img {
+    width: 50%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .personaje-grande h3 {
+    font-size: 1.5em;
+    color: #002D62;
+    margin: 15px 0;
+  }
+  
+  .personaje-grande p {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 15px;
+  }
+  
+  .personaje-grande .btn-historia {
+    background: #CE1126;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  
+  .personaje-grande .btn-historia:hover {
+    background: #a00d1f;
+  }
+  
+  /* Contenedores para el catálogo de personajes */
+  .catalogo-personajes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .personaje {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .personaje img {
+    width: 90%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .personaje h3 {
+    font-size: 1.2em;
+    color: #002D62;
+    margin: 10px 0;
+  }
+  
+  .personaje .btn-historia {
+    background: #CE1126;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  
+  .personaje .btn-historia:hover {
+    background: #a00d1f;
+  }
+  
+  /* Efectos hover para los contenedores */
+  .personaje-grande:hover, .personaje:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+footer {
+    background: #002D62; 
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+  }
+  
+  .footer-message p {
+    font-size: 1.2em;
+    margin: 5px 0;
+    font-weight: bold;
+  }
+  
+  .footer-message p:first-child {
+    font-size: 1.5em;
+    color: #CE1126; 
+  }
+  
+  .footer-info p {
+    font-size: 0.9em;
+    margin: 5px 0;
+    color: #f0f0f0;
+  }
+  
+  .footer-info p:first-child {
+    margin-top: 15px;
+  }

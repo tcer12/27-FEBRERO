@@ -1,0 +1,246 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgba(255, 255, 255, 0.979);
+  background-image: url(/projectoindependencia/carru27/carru/img/Flag\ of\ Dominican\ Republic\ in\ grunge\ style\ with\ waving\ effect_\ \(1\).jpeg);
+  background-repeat: no-repeat;
+  background-size: 95%;
+  background-position: 0%;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+  width: 7px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #ff2424;
+  border-radius: 10px;
+}
+
+/* Menú Interactivo (Patriótico) */
+/* Estilos generales del menú */
+.menu {
+  background: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo del menú */
+.menu-logo img {
+  height: 50px;
+  transition: transform 0.3s ease;
+}
+
+.menu-logo img:hover {
+  transform: scale(1.1);
+}
+
+/* Lista de enlaces del menú */
+.menu-list {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}.menu {
+  background: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.menu-logo img {
+  height: 50px;
+  transition: transform 0.3s ease;
+}
+
+.menu-logo img:hover {
+  transform: scale(1.1);
+}
+
+.menu-titulo {
+  text-align: center;
+  margin: 0 20px;
+}
+
+.menu-titulo h1 {
+  font-size: 1.5em;
+  color: #002D62; /* Azul oscuro */
+  margin: 0;
+}
+
+.menu-titulo p {
+  font-size: 0.8em;
+  color: #555;
+  margin: 0;
+}
+
+.menu-list {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-link {
+  color: #002D62; /* Azul oscuro */
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: 500;
+  padding: 10px 15px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.menu-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #CE1126; /* Rojo */
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.menu-link:hover {
+  color: #CE1126; /* Rojo al hacer hover */
+}
+
+.menu-link:hover::after {
+  width: 100%;
+}
+header {
+  background-color: #8d4928;
+  text-align: center;
+  padding: 1rem;
+}
+
+.contenedor {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.img {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.img img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+  color: #34495e;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  color: #555;
+  line-height: 1.8;
+  text-align: justify;
+  margin-bottom: 1rem;
+}
+
+button {
+  background-color: #34495e;
+  width: 200px;
+  height: 50px;
+  border-radius: 30px;
+  font-size: 17px;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #8d4928;
+
+}
+
+#puzzle {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 2px;
+  margin: 20px auto;
+  width: 304px;
+  border: 2px solid #000;
+}
+
+.piece {
+  width: 100px;
+  height: 100px;
+  background-size: 300px 300px;
+  cursor: grab;
+  border: 1px solid #ccc;
+} 
+footer {
+    background: #002D62; 
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+  }
+  
+  .footer-message p {
+    font-size: 1.2em;
+    margin: 5px 0;
+    font-weight: bold;
+  }
+  
+  .footer-message p:first-child {
+    font-size: 1.5em;
+    color: #CE1126; 
+  }
+  
+  .footer-info p {
+    font-size: 0.9em;
+    margin: 5px 0;
+    color: #f0f0f0;
+  }
+  
+  .footer-info p:first-child {
+    margin-top: 15px;
+  }
