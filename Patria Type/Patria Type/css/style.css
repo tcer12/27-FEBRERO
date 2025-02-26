@@ -1,0 +1,800 @@
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #111827, #1f2937, #111827);
+  color: white;
+}
+
+#app {
+  min-height: 100vh;
+  padding: 1rem;
+  position: relative;
+}
+
+/* Media query para dispositivos más grandes */
+@media (min-width: 768px) {
+  #app {
+    padding: 2rem;
+  }
+}
+
+/* Pantallas */
+.screen {
+  display: none;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.screen.active {
+  display: block;
+}
+
+/* Título */
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+/* Media query para pantallas más grandes */
+@media (min-width: 768px) {
+  .title {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.blue { color: #3b82f6; }
+.white { color: white; }
+.red { color: #ef4444; }
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+  }
+}
+
+/* Botones */
+.btn-play {
+  font-size: 1.2rem;
+  padding: 0.6rem 1.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+@media (min-width: 768px) {
+  .btn-play {
+    font-size: 1.5rem;
+    padding: 0.75rem 2rem;
+  }
+}
+
+.btn-play:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+/* Carrusel */
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 350px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media (min-width: 768px) {
+  .carousel {
+    height: 400px;
+    padding: 0 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .carousel {
+    height: 500px;
+  }
+}
+
+.carousel-container,
+.patriots-carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-item {
+  position: absolute;
+  width: 100%;
+  max-width: 18rem;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .carousel-item {
+    max-width: 24rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .carousel-item {
+    max-width: 32rem;
+  }
+}
+
+.carousel-item.active {
+  opacity: 1;
+  transform: scale(1) translateX(0);
+  z-index: 20;
+}
+
+.carousel-item.prev {
+  opacity: 0.5;
+  transform: scale(0.9) translateX(-70%);
+  z-index: 10;
+}
+
+@media (min-width: 768px) {
+  .carousel-item.prev {
+    transform: scale(0.9) translateX(-100%);
+  }
+}
+
+.carousel-item.next {
+  opacity: 0.5;
+  transform: scale(0.9) translateX(70%);
+  z-index: 10;
+}
+
+@media (min-width: 768px) {
+  .carousel-item.next {
+    transform: scale(0.9) translateX(100%);
+  }
+}
+
+.carousel-item.hidden {
+  opacity: 0;
+  transform: scale(0.75) translateX(100%);
+  z-index: 0;
+}
+
+.carousel-card {
+  position: relative;
+  aspect-ratio: 4/3;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-card img {
+  width: 100%;
+  height: 100%;
+  background-image: bottom;
+  transition: transform 0.5s;
+}
+
+.carousel-card:hover img {
+  transform: scale(1.1);
+}
+
+.carousel-content {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.5), transparent);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .carousel-content {
+    padding: 2rem;
+  }
+}
+
+.carousel-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .carousel-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .carousel-title {
+    font-size: 2.5rem;
+  }
+}
+
+.carousel-description {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+@media (min-width: 768px) {
+  .carousel-description {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .carousel-description {
+    font-size: 1.125rem;
+  }
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 30;
+  padding: 0.6rem;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 9999px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+@media (min-width: 768px) {
+  .carousel-btn {
+    padding: 1rem;
+  }
+}
+
+.carousel-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn.prev { left: 0; }
+.carousel-btn.next { right: 0; }
+
+/* Typing Game */
+.typing-container,
+.character-typing-container,
+.hymn-typing-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  background: rgba(31, 41, 55, 0.9);
+  backdrop-filter: blur(8px);
+  border-radius: 1rem;
+}
+
+@media (min-width: 768px) {
+  .typing-container,
+  .character-typing-container,
+  .hymn-typing-container {
+    max-width: 48rem;
+    padding: 1.5rem;
+  }
+}
+
+.typing-text {
+  font-family: monospace;
+  font-size: 1rem;
+  white-space: pre-wrap;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .typing-text {
+    font-size: 1.25rem;
+  }
+}
+
+.typing-text span {
+  position: relative;
+}
+
+.typing-text span.correct { color: #10b981; }
+.typing-text span.incorrect { color: #ef4444; }
+.typing-text span.current {
+  position: relative;
+}
+
+.typing-text span.current::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #3b82f6;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.typing-input {
+  width: 100%;
+  padding: 0.75rem;
+  background: rgba(55, 65, 81, 0.9);
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .typing-input {
+    padding: 1rem;
+  }
+}
+
+.typing-input:focus {
+  outline: 2px solid rgba(59, 130, 246, 0.5);
+}
+
+/* Quiz */
+.quiz-container {
+  max-width: 100%;
+  margin: 1rem auto;
+  padding: 1rem;
+  background: rgba(31, 41, 55, 0.9);
+  backdrop-filter: blur(8px);
+  border-radius: 1rem;
+}
+
+@media (min-width: 768px) {
+  .quiz-container {
+    max-width: 32rem;
+    margin: 2rem auto;
+    padding: 2rem;
+  }
+}
+
+.quiz-container h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .quiz-container h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.options-container {
+  display: grid;
+  gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .options-container {
+    gap: 1rem;
+  }
+}
+
+.option-btn {
+  padding: 0.75rem;
+  background: rgba(55, 65, 81, 0.9);
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+@media (min-width: 768px) {
+  .option-btn {
+    padding: 1rem;
+  }
+}
+
+.option-btn:hover {
+  background: rgba(75, 85, 99, 0.9);
+  transform: scale(1.05);
+}
+
+/* Resultados y Feedback */
+.typing-result {
+  background: rgba(17, 24, 39, 0.95);
+  border: 2px solid rgba(59, 130, 246, 0.3);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  max-width: 100%;
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .typing-result {
+    max-width: 32rem;
+    margin: 2rem auto;
+    padding: 2rem;
+  }
+}
+
+.typing-result h3 {
+  font-size: 1.5rem;
+  color: #3b82f6;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .typing-result h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .stats-container {
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.stat-item {
+  background: rgba(31, 41, 55, 0.5);
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .stat-item {
+    padding: 1rem;
+  }
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-bottom: 0.25rem;
+}
+
+@media (min-width: 768px) {
+  .stat-label {
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.stat-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .stat-value {
+    font-size: 1.5rem;
+  }
+}
+
+.patriotism-meter {
+  background: rgba(31, 41, 55, 0.5);
+  padding: 1rem;
+  border-radius: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .patriotism-meter {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.patriotism-label {
+  font-size: 1rem;
+  color: white;
+  margin-bottom: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .patriotism-label {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.patriotism-bar {
+  height: 1rem;
+  background: rgba(55, 65, 81, 0.5);
+  border-radius: 9999px;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .patriotism-bar {
+    height: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.patriotism-progress {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+  transition: width 1s ease-out;
+}
+
+.feedback {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .feedback {
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+}
+
+.patriotism-message {
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 1rem 0;
+}
+
+@media (min-width: 768px) {
+  .patriotism-message {
+    font-size: 1.25rem;
+    margin: 1.5rem 0;
+  }
+}
+/* Himnos */
+.hymns-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+@media (min-width: 640px) {
+  .hymns-list {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hymns-list {
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+  }
+}
+
+.hymn-card {
+  background: rgba(31, 41, 55, 0.9);
+  backdrop-filter: blur(8px);
+  border-radius: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+@media (min-width: 768px) {
+  .hymn-card {
+    padding: 2rem;
+  }
+}
+
+.hymn-card:hover {
+  transform: scale(1.05);
+  background: rgba(55, 65, 81, 0.9);
+}
+
+.hymn-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .hymn-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.hymn-typing-container {
+  position: relative;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .hymn-typing-container {
+    padding: 2rem;
+  }
+}
+
+.hymn-typing-container h2 {
+  font-size: 1.5rem;
+  color: #3b82f6;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .hymn-typing-container h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.hymn-typing-container .typing-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  white-space: pre-line;
+  text-align: left;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: none;
+}
+
+/* Ajustes especiales para pantallas pequeñas */
+@media (max-width: 480px) {
+  .hymn-typing-container .typing-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding: 0.5rem;
+    /* Evita cortes de palabras */
+    hyphens: none;
+    overflow-wrap: normal;
+    word-break: keep-all;
+  }
+  
+  /* Garantiza que los caracteres del juego de tipeo se muestren correctamente */
+  .typing-char {
+    font-size: 16px !important;
+    white-space: normal !important;
+    word-break: keep-all !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .hymn-typing-container .typing-text {
+    font-size: 1.25rem;
+    line-height: 2;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Back Button */
+.back-btn {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 50;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 9999px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+@media (min-width: 768px) {
+  .back-btn {
+    top: 2rem;
+    left: 2rem;
+    padding: 0.75rem;
+  }
+}
+
+.back-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.hidden {
+  display: none;
+}
+
+.typing-char {
+  display: inline-block;
+  font-size: 18px;
+}
+
+@media (min-width: 768px) {
+  .typing-char {
+    font-size: 24px;
+  }
+}
+
+/* Corrección para -webkit-background-clip en Safari */
+@supports (-webkit-background-clip: text) or (background-clip: text) {
+  .patriotism-message {
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+}
+
+/* Media queries para dispositivos muy pequeños */
+@media (max-width: 350px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .carousel {
+    height: 300px;
+    padding: 0 1.5rem;
+  }
+  
+  .carousel-item {
+    max-width: 16rem;
+  }
+  
+  .carousel-title {
+    font-size: 1.25rem;
+  }
+  
+  .carousel-description {
+    font-size: 0.8rem;
+  }
+  
+  .carousel-btn {
+    padding: 0.5rem;
+  }
+  
+  .typing-char {
+    font-size: 16px;
+  }
+}

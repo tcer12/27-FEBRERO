@@ -1,0 +1,52 @@
+.quiz-option {
+  transition: all 300ms ease-in-out;
+}
+
+.quiz-option:hover {
+  transform: scale(1.05);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Ajustes para el backdrop-blur en navegadores que lo soportan */
+@supports (backdrop-filter: blur(12px)) {
+  .backdrop-blur-lg {
+    backdrop-filter: blur(12px);
+  }
+}
+
+.btn-bottom-left {
+  position: fixed;
+  left: 10px;
+  bottom: 10px;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Cambio de color al pasar el mouse por encima */
+.btn-bottom-left:hover {
+  background-color: #2980b9;
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 600px) {
+  .btn-bottom-left {
+      font-size: 14px;
+      padding: 8px 16px;
+  }
+}
+
+/* Fallback para navegadores que no soportan backdrop-filter */
+@supports not (backdrop-filter: blur(12px)) {
+  .backdrop-blur-lg {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}

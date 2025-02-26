@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patria Type</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Pantalla de inicio -->
+        <div id="start-screen" class="screen active">
+            <h1 class="title">
+                <span class="blue">PA</span>
+                <span class="white">TRIA </span>
+                <span class="red">TYPE</span>
+            </h1>
+            <p class="subtitle">"Domina el teclado como un verdadero patriota."</p>
+            <button class="btn-play" onclick="startGame()">JUGAR</button>
+        </div>
+
+        <!-- Selección de modo -->
+        <div id="modes-screen" class="screen">
+            <h2 class="title">
+                <span class="blue">PA</span>
+                <span class="white">TRIA </span>
+                <span class="red">TYPE</span>
+            </h2>
+            <h3 class="mode-subtitle">Selecciona el modo de juego</h3>
+
+            <div class="carousel">
+                <button class="carousel-btn prev" onclick="prevMode()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m15 18-6-6 6-6" />
+                    </svg>
+                </button>
+
+                <div class="carousel-container"></div>
+
+                <button class="carousel-btn next" onclick="nextMode()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m9 18 6-6-6-6" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Pantalla de trivia -->
+        <div id="trivia-screen" class="screen">
+            <div class="typing-container">
+                <div class="typing-text"></div>
+                <input type="text" class="typing-input" placeholder="Comienza a escribir...">
+            </div>
+            <div class="typing-result hidden"></div>
+            <div class="quiz-container hidden">
+                <h3>¿Quién dijo esta frase?</h3>
+                <div class="options-container"></div>
+                <div class="quiz-feedback"></div>
+            </div>
+        </div>
+
+        <!-- Pantalla de personajes -->
+        <div id="characters-screen" class="screen">
+            <h2>Personajes Históricos</h2>
+            <div class="carousel">
+                <button class="carousel-btn prev" onclick="prevPatriot()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m15 18-6-6 6-6" />
+                    </svg>
+                </button>
+
+                <div class="patriots-carousel"></div>
+
+                <button class="carousel-btn next" onclick="nextPatriot()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m9 18 6-6-6-6" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Pantalla de escritura de personaje -->
+        <div id="character-typing-screen" class="screen">
+            <div class="character-typing-container">
+                <div class="typing-text"></div>
+                <input type="text" class="typing-input" placeholder="Comienza a escribir...">
+                <div class="typing-result hidden"></div>
+            </div>
+        </div>
+
+        <!-- Pantalla de himnos -->
+        <div id="hymns-screen" class="screen">
+            <h2>Himnos Patrios</h2>
+            <div class="hymns-list"></div>
+        </div>
+
+        <!-- Pantalla de escritura de himno -->
+        <div id="hymn-typing-screen" class="screen hidden">
+            <div class="hymn-typing-container">
+                <div class="typing-text"></div>
+                <input type="text" class="typing-input" placeholder="Comienza a escribir...">
+                <div class="typing-result hidden"></div>
+            </div>
+        </div>
+
+        <!-- Botón de retroceso -->
+        <button id="back-btn" class="back-btn hidden" onclick="goBack()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m12 19-7-7 7-7" />
+                <path d="M19 12H5" />
+            </svg>
+        </button>
+    </div>
+    <script src="js/hymnostext.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
