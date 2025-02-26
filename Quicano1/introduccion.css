@@ -1,0 +1,86 @@
+body {
+    background: rgb(0, 61, 255);
+    background: linear-gradient(90deg, rgba(0, 61, 255, 1) 0%, rgba(255, 255, 255, 1) 45%, rgba(121, 9, 9, 1) 97%);
+}
+/* Contenedor principal que agrupa la imagen y el cuestionario */
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+
+/* Imagen que está a la izquierda */
+.image-section {
+    width: 48%; /* Imagen ocupa el 38.7% del ancho de la página */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    margin-bottom: 4%;
+}
+
+.image-section img{
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* Contenedor del cuestionario */
+.container {
+    background-color: #004aad;
+    padding: 40px;
+    border-radius: 70px;
+    width: 50%; /* Cuestionario ocupa el 60% de la página */
+    color: white;
+    margin-bottom: 5%;
+    height: 550px;
+    margin: 60px;
+    border: solid;
+}
+.titulo{
+    text-align: center;
+    font-size: 90px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 350;
+    margin-bottom: 0;
+}
+
+
+.botones{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100px; 
+}
+
+.botones > a > button{
+
+    background-color: #ffffff;
+    opacity: 0.78;
+    width: 200px;
+    height: 80px;
+    color: #000000;
+    font-size: 30px;
+    font-weight: 300;
+    border-radius: 80px;
+    margin: 30px 80px 0px 70px;
+}
+
+.sub{
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 300;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.h2{
+ font-size: 25px;
+ text-align: center;
+ font-family: Arial, Helvetica, sans-serif;
+}
+
+#Limpiar{
+    cursor: pointer;
+}

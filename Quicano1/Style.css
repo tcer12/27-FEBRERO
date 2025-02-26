@@ -1,0 +1,34 @@
+body {
+    background: rgb(0, 61, 255);
+    background: linear-gradient(90deg, rgba(0, 61, 255, 1) 0%, rgba(255, 255, 255, 1) 45%, rgba(121, 9, 9, 1) 97%);
+}
+
+
+  
+.img {
+    text-align: center;
+    cursor: pointer; 
+}
+
+img {
+    margin-top: 60px;
+    height: 600px;
+    width: 600px;
+    transition: transform 0.5s ease-in-out; 
+}
+
+.pulse {
+    animation: pulsate 1.5s infinite; 
+}
+
+@keyframes pulsate {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1); 
+    }
+    100% {
+        transform: scale(1);
+    }
+}

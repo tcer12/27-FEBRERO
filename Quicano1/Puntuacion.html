@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Puntuación</title>
+        <link rel="stylesheet" href="P.CSS">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="main-content">
+            <div class="image-section">
+                <a href="Home.html" id="Limpiar"><img src="img/Logo.png" class="logo" alt=""></a>
+            </div>
+    
+            <div class="container">
+                <h1 class="titulo">¡Felicidades,<br/> Haz ganado!</h1>
+                <h2 class="h2">Puntuación:</h2>
+
+                <div class="puntos">
+                    <p id="resultado"></p>
+                </div>
+                
+                <div class="botones">
+                    <a href="Introduccion.html" id="Limpiar"><button>Menú</button></a>
+                    <a href="Home.html" id="Limpiar"><button>Salir</button></a>
+                </div>
+            </div>
+        </div>
+        <script>
+            const correctans = {
+            Question1: "A",
+            Question2: "B",
+            Question3: "C",
+            Question4: "A",
+            Question5: "A",
+            Question6: "B",
+            Question7: "B",
+            Question8: "A",
+            Question9: "B",
+            Question10: "A"
+        }
+
+        function guardarRespuesta(element, question) {
+            const selectedAnswer = element.getAttribute("data-ans");
+            localStorage.setItem(question, selectedAnswer);
+        }
+
+        function result() {
+            let Goodans = 0;
+            let totalques = Object.keys(correctans).length;
+
+            for (let Question in correctans) {
+                let userans = localStorage.getItem(Question);
+                
+                console.log(`Pregunta: ${Question}, Usuario: ${userans}, Correcta: ${correctans[Question]}`); // Debug
+
+                if (userans && userans.toUpperCase() === correctans[Question].toUpperCase()) {
+                    Goodans++;
+                }
+            }
+
+            // Mostrar la puntuación en el elemento con id "resultado"
+            let resultadoElemento = document.getElementById("resultado");
+            if (resultadoElemento) {
+                resultadoElemento.innerText = `${Goodans}/${totalques}`;
+            } else {
+                console.error("No se encontró el elemento con id 'resultado'");
+            }
+        }
+
+        // Ejecutar la función result cuando la página cargue
+        window.onload = result;
+
+        function Limpiar(){
+            localStorage.clear();
+            console.log("Ya se limpió la memoria");
+        }
+        </script>
+    </body>
+</html>

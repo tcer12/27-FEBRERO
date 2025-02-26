@@ -1,0 +1,78 @@
+body {
+    font-family: Verdana, Geneva, Tahoma;
+    background-color: #922318;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Contenedor principal que agrupa la imagen y el cuestionario */
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+
+/* Imagen que está a la izquierda */
+.image-section {
+    width: 53%; /* Imagen ocupa el 38.7% del ancho de la página */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.image-section img{
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* Contenedor del cuestionario */
+.container {
+    background-color: #922318;
+    padding: 40px;
+    border-radius: 10px;
+    width: 60%; /* Cuestionario ocupa el 60% de la página */
+    color: white;
+}
+
+/* Sección de la pregunta */
+.question-section h1 {
+    font-size: 30px;
+    color: rgb(243, 243, 243);
+    margin-bottom: 30px;
+    font-family: New ;
+    margin-top: -10%;
+    text-align: center;
+}
+
+/* Opciones */
+.option {
+    font-family: new;
+    background-color: #ffffff;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.479);
+    border-radius: 50px;
+    padding: 16px;
+    margin: 20px 100px;
+    font-size: 20px;
+    color: #333;
+    box-shadow: #333 100pc;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    margin-top: 3%;
+}
+
+.option:hover {
+    background-color: #83adcf;
+}
+
+/* Mensaje de retroalimentación */
+.feedback {
+    margin-top: 20px;
+    font-size: 18px;
+}

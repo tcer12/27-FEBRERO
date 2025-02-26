@@ -1,0 +1,32 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Quiscano Quis</title>
+    <link rel="stylesheet" href="css.css"> 
+</head>
+<body>
+    <div class="container">
+        <form id="formulario">
+            <div class="title">
+                <label for="nombre">Nombre de usuario</label>
+                <br/>
+                <br/>
+                <input type="text" class="text" placeholder="Usuario" id="nombre" name="nombre" />
+            </div>
+           
+            <button type="button" class="btn" onclick="iniciar()">Iniciar</button>
+        </form>
+    </div>
+    <script>
+        function iniciar() {
+            const nombre = document.getElementById('nombre').value;
+            if (!nombre) {
+                alert("Por favor ingrese un nombre de usuario");
+                return false; 
+            }
+            
+            window.location.href = "cuestionario.html";
+        }
+    </script>
+</body>
+</html>

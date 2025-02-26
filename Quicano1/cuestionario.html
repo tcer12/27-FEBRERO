@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiscano Quis</title>
+    <link rel="stylesheet" href="cuestionario.css"> 
+</head>
+<body>
+    <div class="main-content">
+        <div class="image-section">
+            <img src="img/AnyConv.com__Ban1.jpg" alt="Escudo de la República Dominicana">
+        </div>
+
+        <div class="container">
+            <div class="question-section">
+                <h1>¿Cuál es el lema nacional que aparece en el escudo de la República Dominicana?</h1>
+                <br/>
+                <br/>
+                <div class="option ans" data-ans="A" onclick="verificarRespuesta(this, true)">
+                    <p>Dios, Patria y Libertad</p>
+                </div>
+                
+                <div class="option ans" data-ans="B" onclick="verificarRespuesta(this, false)">
+                    <p>Unidad, Paz y Amor</p>
+                </div>
+                
+                <div class="option ans" data-ans="C" onclick="verificarRespuesta(this, false)">
+                    <p>Justicia y Libertad</p>
+                </div>
+                
+                <p id="feedback" class="feedback"></p> <!-- Mensaje de retroalimentación -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function verificarRespuesta(element, esCorrecta) {
+            const feedback = document.getElementById('feedback');
+            const selectedAnswer = element.getAttribute("data-ans");
+            
+            // Guardar la respuesta seleccionada en localStorage
+            localStorage.setItem("Question1", selectedAnswer);
+            
+            // Mostrar el feedback de la respuesta
+            if (esCorrecta) {
+                feedback.textContent = "¡Respuesta correcta!";
+                feedback.style.color = "green";
+            } else {
+                feedback.textContent = "Respuesta incorrecta. Suerte para la próxima.";
+                feedback.style.color = "red";
+            }
+
+            // Reiniciar el estilo de todas las opciones
+            const opciones = document.querySelectorAll('.option');
+            opciones.forEach(opcion => opcion.style.backgroundColor = '#ffffff');
+            
+            // Cambiar el fondo de la opción seleccionada
+            element.style.backgroundColor = esCorrecta ? '#90ee90' : '#ffcccb';
+
+            // Redirigir a la siguiente página después de 1.5 segundos
+            setTimeout(function(){
+                window.location.href = "car1-2.html"; // Redirigir a otra página
+            }, 1500); // Redirige después de 1.5 segundos
+        }
+    </script>
+</body>
+</html>

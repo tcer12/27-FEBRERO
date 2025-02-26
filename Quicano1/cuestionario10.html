@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiscano Quis</title>
+    <link rel="stylesheet" href="cuestionario4.css"> 
+</head>
+<body>
+    <div class="main-content">
+        <div class="image-section">
+            <img src="img/bandera1.jpg" alt="Escudo de la República Dominicana">
+        </div>
+
+        <div class="container">
+            <div class="question-section">
+                <h1>¿En qué año se adoptó oficialmente la actual bandera de la República Dominicana?</h1>
+                <br/>
+                <br/>
+                <div class="option ans" data-ans="A" onclick="verificarRespuesta(this, true)">
+                    <p>1821</p>
+                </div>
+                
+                <div class="option ans" data-ans="B" onclick="verificarRespuesta(this, false)">
+                    <p>1844</p>
+                </div>
+                
+                <div class="option ans" data-ans="C" onclick="verificarRespuesta(this, false)">
+                    <p>1865</p>
+                </div>
+                
+                <p id="feedback" class="feedback"></p> <!-- Mensaje de retroalimentación -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function verificarRespuesta(element, esCorrecta) {
+            const selectedans = element.getAttribute("data-ans");
+            
+            // Guardar la respuesta seleccionada en localStorage
+            localStorage.setItem("Question10", selectedans);
+            
+            const feedback = document.getElementById('feedback');
+            if (esCorrecta) {
+                feedback.textContent = "¡Respuesta correcta!";
+                feedback.style.color = "green";
+            } else {
+                feedback.textContent = "Respuesta incorrecta. Suerte para la próxima.";
+                feedback.style.color = "red";
+            }
+
+            // Cambiar el fondo de la opción seleccionada
+            const opciones = document.querySelectorAll('.option');
+            opciones.forEach(opcion => opcion.style.backgroundColor = '#ffffff');
+            element.style.backgroundColor = esCorrecta ? '#90ee90' : '#ffcccb';
+
+            // Redirigir después de un tiempo
+            setTimeout(function(){
+                window.location.href = "car10-puntuacion.html"; // Redirigir a la página de puntuación
+            }, 1500); // Redirige después de 1.5 segundos
+        }
+    </script>
+</body>
+</html>
