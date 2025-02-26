@@ -17,20 +17,32 @@
     <section class="container">
       <h2 class="title">¡Ponte a Prueba con los Juegos de la Historia Dominicana!</h2>
       <div class="container_mini_1">
-        <a id="img1" href="./Desafio/index.html"><img class="foto" src="./assets/img/desafio_patriotico.webp" alt="X"></a>
+        <a id="img1" href="./Desafio/index.html"><img class="foto" src="./assets/img/desafio_patriotico.webp"
+            alt="X"></a>
         <a id="img2" href="./Quiz Patriota/mapa.html"><img class="foto" src="./assets/img/mapa.jpg" alt="X"></a>
-        <a id="img2" href="./Crucigrama/Crucigrama/index.html"><img class="foto" src="./assets/img/crusigrama.jpg" alt="X"></a>
-        <a id="img3" href="./Slidding puzzle/indexdefinitivo.html"><img class="foto" 
-            src="./assets/img/Slidding puzle.jpg" alt="X"></a>
-        <a id="img4" href="./sopa de letra/SOPAPO.html"><img class="foto" 
-            src="./assets/img/Imagen de WhatsApp 2025-02-24 a las 14.50.55_005e0a1a.jpg" alt="X"></a>
+        <a id="img9" href="./memory card game SIN PALOMERIA/memory card game SIN PALOMERIA/game.html"><img class="foto"
+            src="./assets/img/quisquelacards.jpg" alt="X"></a>
+        <a id="img2" href="./Patria Type/Patria Type/index.html"><img class="foto" src="./assets/img/patria.jpg"
+            alt="X"></a>
       </div>
       <div class="container_mini_1">
-        <a id="img5" href="./El ahorcado/El_ahorcado.html"><img class="foto"  src="./assets/img/elahorcado.jpg" alt="X"></a>
-        <a id="img6" href="./WordleDO/index.html"><img class="foto"  src="./assets/img/slidding.jpg " alt="X"></a>
-        <a id="img7" href="./Quiz Patriota/presentacion.html"><img class="foto"  src="./assets/img/quizzpatriota.jpg " alt="X"></a>
-        <a id="img8" href="https://tcer12.github.io/Prueba/"><img class="foto"  src="./assets/img/quizzyano.jpg" alt="X"></a>
-        <a id="img8" href="https://tcer12.github.io/x/"><img class="foto"  src="./assets/img/patriapley.jpg" alt="X"></a>
+        <a id="img5" href="./El ahorcado/El_ahorcado.html"><img class="foto" src="./assets/img/elahorcado.jpg"
+            alt="X"></a>
+            <a id="img11" href="./ProjectV2.5/ProjectV2.5/index.html"><img class="foto" src="./assets/img/logogabo.jpg" alt="X"></a>
+        <a id="img7" href="./Quiz Patriota/presentacion.html"><img class="foto" src="./assets/img/quizzpatriota.jpg "
+            alt="X"></a>
+        <a id="img8" href="https://tcer12.github.io/Prueba/"><img class="foto" src="./assets/img/quizzyano.jpg"
+            alt="X"></a>
+        <a id="img8" href="https://tcer12.github.io/x/"><img class="foto" src="./assets/img/patriapley.jpg" alt="X"></a>
+      </div>
+      <div class="container_mini_1">
+        <a id="img4" href="./sopa de letra/SOPAPO.html"><img class="foto"
+            src="./assets/img/Imagen de WhatsApp 2025-02-24 a las 14.50.55_005e0a1a.jpg" alt="X"></a>
+        <a id="img3" href="./Slidding puzzle/indexdefinitivo.html"><img class="foto"
+            src="./assets/img/Slidding puzle.jpg" alt="X"></a>
+        <a id="img12" href="./Crucigrama/Crucigrama/index.html"><img class="foto" src="./assets/img/crusigrama.jpg"
+          alt="X"></a>
+        <a id="img6" href="./WordleDO/index.html"><img class="foto" src="./assets/img/slidding.jpg " alt="X"></a>
       </div>
     </section>
     <div class="alert-container" id="alerta">
@@ -43,7 +55,7 @@
       <img src="./assets/img/Juan_Pablo_Duarte.png" alt="Alerta">
     </div>
   </main>
-  <div class="containerr">
+  <!--<div class="containerr">
     <div class="dot dot-1"></div>
     <div class="dot dot-2"></div>
     <div class="dot dot-3"></div>
@@ -56,57 +68,58 @@
         <feColorMatrix values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7" mode="matrix" in="blur"></feColorMatrix>
       </filter>
     </defs>
-  </svg>
+  </svg>-->
+
   <script>
 
-     // Función para animar cada imagen con el shake
-  function animateShake(id) {
-    const image = document.getElementById(id);
-    image.style.animation = 'shake 0.5s ease-in-out'; // Activar animación shake
-    
-    // Después de 0.5 segundos, eliminar la animación para reiniciarla
-    setTimeout(() => {
-      image.style.animation = ''; // Reiniciar la animación
-    }, 500);
-  }
+    // Función para animar cada imagen con el shake
+    function animateShake(id) {
+      const image = document.getElementById(id);
+      image.style.animation = 'shake 0.5s ease-in-out'; // Activar animación shake
 
-  // Función que controla la animación secuencial
-  function animarSecuencial() {
-    let ids = ['img1', 'img4', 'img5', 'img2', 'img3', 'img6', 'img7', 'img8']; 
-    let i = 0;
+      // Después de 0.5 segundos, eliminar la animación para reiniciarla
+      setTimeout(() => {
+        image.style.animation = ''; // Reiniciar la animación
+      }, 500);
+    }
 
-    setInterval(() => {
-      animateShake(ids[i]); 
-      i = (i + 1) % ids.length;
-    }, 3000); 
-  }
+    // Función que controla la animación secuencial
+    function animarSecuencial() {
+      let ids = ['img1', 'img4', 'img5', 'img2', 'img3', 'img6', 'img7', 'img8', 'img9', 'img10', 'img11', 'img12'];
+      let i = 0;
 
-  // Llamamos a la función para iniciar la animación secuencial
-  animarSecuencial();
+      setInterval(() => {
+        animateShake(ids[i]);
+        i = (i + 1) % ids.length;
+      }, 3000);
+    }
 
-document.addEventListener("DOMContentLoaded", function () {
-    // Bloquear enlaces al inicio
-    const links = document.querySelectorAll("#img1, #img2, #img3, #img4, #img5, #img6, #img7, #img8");
+    // Llamamos a la función para iniciar la animación secuencial
+    animarSecuencial();
 
-    links.forEach(link => {
-        link.style.pointerEvents = "none"; 
-        link.style.opacity = "0.5"; 
-    });
+    document.addEventListener("DOMContentLoaded", function () {
+      // Bloquear enlaces al inicio
+      const links = document.querySelectorAll("#img1, #img2, #img3, #img4, #img5, #img6, #img7, #img8, #img9 , #img10, #img11, #img12");
 
-    // Función para cerrar la alerta y desbloquear enlaces
-    function cerrarAlerta() {
+      links.forEach(link => {
+        link.style.pointerEvents = "none";
+        link.style.opacity = "0.5";
+      });
+
+      // Función para cerrar la alerta y desbloquear enlaces
+      function cerrarAlerta() {
         document.getElementById('alerta').style.display = 'none';
 
         // Desbloquear enlaces
         links.forEach(link => {
-            link.style.pointerEvents = "auto"; 
-            link.style.opacity = "1"; 
+          link.style.pointerEvents = "auto";
+          link.style.opacity = "1";
         });
-    }
+      }
 
-    // Asignar función al botón "Aceptar"
-    document.getElementById("btnAceptar").addEventListener("click", cerrarAlerta);
-});
+      // Asignar función al botón "Aceptar"
+      document.getElementById("btnAceptar").addEventListener("click", cerrarAlerta);
+    });
 
 
     document.addEventListener("DOMContentLoaded", function () {
@@ -118,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Ocultar todos los demás elementos excepto .containerr
       allElements.forEach(el => {
-        el.style.opacity = "0";  
+        el.style.opacity = "0";
         el.style.visibility = "hidden";
       });
 

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuisqueyaCard</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+    <!-- Modal de inicio -->
+    <div class="modal show" id="startModal">
+        <div class="text">
+            <h1 class="title">QuisqueyaCards</h1>
+            <p class="desc">¡Pon a prueba tu memoria!</p>
+        </div>
+        <div class="opciones">
+            <button class="level-button" onclick="startGame('easy')">Fácil</button>
+            <button class="level-button" onclick="startGame('medium')">Normal</button>
+            <button class="level-button" onclick="startGame('hard')">Difícil</button>
+            <button class="level-button" onclick="startGame('impossible')">Imposible</button>
+        </div>
+        <div>
+            <h2>Mejor Tiempo: <span id="bestTime">--</span></h2>
+            <p id="madeby">By: Missing Case</p>
+        </div>
+    </div>
+    <a class="btn-bottom-left" href="https://27.roanexus.com/"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-left-dashed"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12h6m3 0h1.5m3 0h.5" /><path d="M5 12l6 6" /><path d="M5 12l6 -6" /></svg></a>
+    <div class="stats">
+        <span id="flips">Flips: 0</span> | <span id="timer">Tiempo: 60s</span>
+        <button onclick="pauseGame()" id="pauseButton" class="boton">Pausar</button>
+    </div>
+    <div class="game-container" id="gameBoard"></div>
+    <div id="modal-pause" class="modal-pause">
+        <h2 id="modalMessage"></h2>
+        <p id="scoreMessage"></p>
+        <h2 id="title">Juego Pausado</h2>
+        <button onclick="resetGame()">Repetir Nivel</button>
+        <button id="backToStartBtn" onclick="showStartModal()">Atrás</button>
+        <button onclick="closePauseModal()">Cerrar</button>
+    </div>
+    <!-- Modal de Pausa -->
+    <div class="modal-pause-wrapper"></div>
+    <!-- Modal de Ganar/Perder -->
+    <div class="modal" id="endModal">
+        <h2 id="endMessage"></h2>
+        <button onclick="resetGame()">Repetir Nivel</button>
+        <button onclick="showStartModal()">Menú Principal</button>
+    </div>
+    
+    <script src="index.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const level = urlParams.get('level');
+            if (level) {
+                startGame(level);
+            }
+        });
+
+        function showStartModal() {
+            closeEndModal(); // Cierra el modal de fin de juego
+            document.getElementById('startModal').classList.add('show');
+            document.getElementById('overlay').style.display = 'flex';
+            document.getElementById('gameBoard').style.display = 'none';
+            closePauseModal(); // Cierra el modal de pausa
+            
+        }
+
+        function closePauseModal() {
+            document.querySelector('.modal-pause-wrapper').style.display = 'none'; // Oculta el fondo
+            document.querySelector('.modal-pause').style.display = 'none'; // Oculta el contenido del modal
+        }
+
+        function closeEndModal() {
+            document.getElementById('endModal').classList.remove('show');
+        }
+
+    </script>
+</body>
+</html>

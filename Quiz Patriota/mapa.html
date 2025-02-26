@@ -19,7 +19,6 @@
             height: 100vh; 
         }
         #contenedorMapa {
-            z-index: -10;
             width: 95%; 
             height: 90vh; 
             margin-bottom: 20px; 
@@ -99,7 +98,6 @@
 
         /* Estilos específicos para el botón */
 .btn-bottom-left {
-    z-index: 10;
     position: fixed;
     left: 10px;
     bottom: 10px;
@@ -129,6 +127,7 @@
     </style>
 </head>
 <body>
+    <a class="btn-bottom-left" href="https://27.roanexus.com/"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-left-dashed"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12h6m3 0h1.5m3 0h.5" /><path d="M5 12l6 6" /><path d="M5 12l6 -6" /></svg></a>
     <div id="contenedorMapa">
         <div id="mapa"></div>
     </div>
@@ -144,8 +143,6 @@
         <p>Gracias por participar. Cada respuesta correcta te acerca a ser un experto en nuestra historia. ¡Hasta la próxima y sigue explorando!</p>
         <button><a href="presentacion.html">jugar</a></button>
     </div>
-
-    <a class="btn-bottom-left" href="https://27.roanexus.com/"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-left-dashed"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12h6m3 0h1.5m3 0h.5" /><path d="M5 12l6 6" /><path d="M5 12l6 -6" /></svg></a>
     
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
