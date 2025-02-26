@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Himno Nacional - Museo Digital de Historia Dominicana</title>
+  <link rel="stylesheet" href="css/Himno.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <!-- Menú Moderno -->
+  <nav class="menu">
+    <div class="menu-logo">
+      <img src="img/logo.png" alt="Logo Museo">
+    </div>
+    <ul class="menu-list">
+      <li><a href="index.html" class="menu-link">Inicio</a></li>
+     
+      <li><a href="Simbolos.html" class="menu-link">Símbolos Patrios</a></li>
+
+      <li><a href="Heroes.html" class="menu-link">Personajes</a></li>
+
+    </ul>
+  </nav>
+
+  <!-- Sección del Himno Nacional -->
+  <section class="himno-section">
+    <div class="himno-header">
+      <h2>Himno Nacional de la República Dominicana</h2>
+      <p>Un canto de libertad y orgullo patrio</p>
+    </div>
+    <div class="himno-content">
+      <div class="himno-letra">
+        <h3>Letra del Himno</h3>
+        <p class="letra-corta">
+          Quisqueyanos valientes, alcemos<br>
+          Nuestro canto con viva emoción,<br>
+          Y del mundo a la faz ostentemos<br>
+          Nuestro invicto glorioso pendón.<br>
+          ¡Salve! el pueblo que, intrépido y fuerte,<br>
+          A la guerra a morir se lanzó,<br>
+          Cuando en bélico reto de muerte<br>
+          Sus cadenas de esclavo rompió.<br>
+        </p>
+        <p class="letra-completa" style="display: none;">
+          Ningún pueblo ser libre merece<br>
+          Si es esclavo indolente y servil;<br>
+          Si en su pecho la llama no crece<br>
+          Que templó el heroísmo viril.<br>
+          Mas Quisqueya la indómita y brava<br>
+          Siempre altiva la frente alzará;<br>
+          Que si fuere mil veces esclava<br>
+          Otras tantas ser libre sabrá.<br>
+        </p>
+        <button class="btn-ver-mas" onclick="mostrarLetraCompleta()">Ver letra completa</button>
+      </div>
+      <div class="himno-audio">
+        <h3>Escucha el Himno</h3>
+        <audio controls>
+          <source src="audio/himno-nacional-rd.mp3" type="audio/mpeg">
+          Tu navegador no soporta el elemento de audio.
+        </audio>
+        <p>¡Haz clic en reproducir y siente el orgullo dominicano!</p>
+      </div>
+    </div>
+
+    <!-- Sección de los creadores del himno -->
+    <div class="creadores-himno">
+      <h3>Los Creadores del Himno</h3>
+      <div class="catalogo-creadores">
+        <div class="personaje">
+          <img src="img/EMILIOPRODUN.jpeg" alt="Emilio Prud'Homme">
+          <h3>Emilio Prud'Homme</h3>
+          <p>Autor de la letra del Himno Nacional Dominicano.</p>
+        </div>
+        <div class="personaje">
+          <img src="img/JOSEREYES.jpeg" alt="José Reyes">
+          <h3>José Reyes</h3>
+          <p>Compositor de la música del Himno Nacional Dominicano.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección de símbolos patrios (bandera y escudo) -->
+    <div class="himno-simbolos">
+     
+    </div>
+  </section>
+
+  <!-- Footer Simplificado -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-message">
+        <p>¡Feliz Día de la Independencia Dominicana!</p>
+        <p>27 de febrero - Un día de orgullo y libertad.</p>
+      </div>
+      <div class="footer-info">
+        <p>Software 5TO C Caroline Hershel</p>
+        <p>Politécnico ITLA.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Java para el botón "Ver más"  -->
+  <script>
+    function mostrarLetraCompleta() {
+      const letraCorta = document.querySelector('.letra-corta');
+      const letraCompleta = document.querySelector('.letra-completa');
+      const boton = document.querySelector('.btn-ver-mas');
+
+      if (letraCompleta.style.display === 'none') {
+        letraCompleta.style.display = 'block';
+        letraCorta.style.display = 'none';
+        boton.textContent = 'Ver menos';
+      } else {
+        letraCompleta.style.display = 'none';
+        letraCorta.style.display = 'block';
+        boton.textContent = 'Ver letra completa';
+      }
+    }
+  </script>
+</body>
+</html>
